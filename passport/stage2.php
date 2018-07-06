@@ -155,6 +155,41 @@
      		</td>
      		<td colspan="3" width="40 px"></td>
      	</tr>
+
+     	<tr>
+     		<td><label>Post Office:</label><b style="color: red"> *</b></td>
+     		<td width="40 px"></td>
+     		<td><select style="width: 300px" name="PostOffice">
+     				<option value="Select">~Select~</option>
+     				<option value="Dhaka">Dhaka</option>
+     				<option value="Bogra">Bogra</option>
+     				<option value="Banani">Banani</option>
+     				<option value="Kuril">Kuril</option>
+
+     			</select>
+     		</td>
+     		<td colspan="3" width="40 px"></td>
+     	</tr>
+
+     	</tr>
+
+	     	<tr>
+     		<td colspan="2"><label>Contact No:</label><b style="color: red">*</b></td>
+     		
+     		<td><input style="width: 300px" type="id" id="Number" placeholder="Contuct Number" ></td>
+     		<td colspan="3" width="40 px"></td>
+     		
+     	</tr>
+
+     	</tr>
+
+	     	<tr>
+     		<td colspan="2"><label>Email:</label></td>
+     		
+     		<td><input style="width: 300px" type="text" id="email" placeholder="Email Address"></td>
+     		<td colspan="3" width="40 px"></td>
+     		
+     	</tr>
      	
      	</form>
      </table>
