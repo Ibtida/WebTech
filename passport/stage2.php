@@ -28,11 +28,33 @@
      	<tr>
      		<td><label>Office No:</label></td>
      		<td width="40 px"></td>
-     		<td><input style="width: 300px" type="id" id="ONum" placeholder="Office Number"></td>
+     		<td><input style="width: 300px" type="id" id="id" placeholder="Office Number"></td>
      		
      		<td><label>Passport No:</label></td>
      		<td width="40 px"></td>
-     		<td><input style="width: 300px" type="id" id="PNum" placeholder="Passport Number"></td>
+     		<td><input style="width: 300px" type="id" id="id" placeholder="Passport Number"></td>
+     	</tr>
+
+     	<tr>
+     		<td><label>Residence No:</label></td>
+     		<td width="40 px"></td>
+     		<td><input style="width: 300px" type="id" id="id" placeholder="Residence Number"></td>
+     		
+     		<td><label>Place Of Issue:</label></td>
+     		<td width="40 px"></td>
+     		<td><input style="width: 300px" type="text" id="PIssue" placeholder="Place of Issue"></td>
+
+     	</tr>
+
+     	<tr>
+     		<td><label>Mobile No:</label></td>
+     		<td width="40 px"></td>
+     		<td><input style="width: 300px" type="text" id="id" placeholder="Mobile Number"></td>
+     		
+     		<td><label>Date Of Issue:</label></td>
+     		<td width="40 px"></td>
+     		<td ><input style="width: 300px" type="date" id="birthDate" class="form-control"></td>
+
      	</tr>
      	</form>
      </table>
