@@ -59,9 +59,9 @@
 
 	     	<tr>
      		
-     		<td colspan="3"><h3>Re-Issue Reason</h3></td>
+     		<td colspan="3"><h3>Emergency Contact Persons Details</h3></td>
      		
-     		<td><label>Date Of Issue:</label></td>
+     		<td><label>Re-Issue Reason:</label></td>
      		<td width="40 px"></td>
      		<td >
      			<select style="width: 300px" name="I_Reason">
