@@ -23,7 +23,7 @@
      		<td rowspan="100" width="150 px"></td>
      		<td><label>Date of Birth:</label><b style="color: red"> *</b></td>
      		<td width="40 px"></td>
-     		<td ><input type="date" id="birthDate" class="form-control"></td>
+     		<td ><input style="width: 300px" type="date" id="birthDate" class="form-control"></td>
      	</tr>
      	<tr>
      		
