@@ -4,7 +4,7 @@
 	<title>Passport Stage2</title>
 	<style>
 		table, th, td {
-    border: 1px solid black;
+    border: none;
     border-collapse: collapse;
 }
 	</style>
@@ -189,6 +189,29 @@
      		<td><input style="width: 300px" type="text" id="email" placeholder="Email Address"></td>
      		<td colspan="3" width="40 px"></td>
      		
+     	</tr>
+
+     	<tr>
+     		<td><label>Relationship:</label><b style="color: red"> *</b></td>
+     		<td width="40 px"></td>
+     		<td><select style="width: 300px" name="Relationship">
+     				<option value="Select">~Select~</option>
+     				<option value="Father">Father</option>
+     				<option value="Mother">Mother</option>
+     				<option value="Brother">Brother</option>
+     				<option value="Uncle">Uncle</option>
+
+     			</select>
+     		</td>
+     		<td colspan="3" width="40 px"></td>
+     	</tr>
+
+     	<tr>
+     		<td style="height: 25px" colspan="5" width="40 px"></td>
+     		<td align="center" colspan="2"> 
+     		<input type="submit" value="PREVIOUS PAGE">
+     		<input type="submit" value="SAVE & NEXT">
+     		</td>
      	</tr>
      	
      	</form>
