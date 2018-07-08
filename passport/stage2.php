@@ -11,6 +11,15 @@
      $_SESSION['DateOfIssue']=$_REQUEST['DateOfIssue'];
      $_SESSION['RI_Reason']=$_REQUEST['RI_Reason'];
      $_SESSION['Name00']=$_REQUEST['Name00'];
+     $_SESSION['Country00']=$_REQUEST['Country00'];
+     $_SESSION['Village_House1']=$_REQUEST['Village_House1'];
+     $_SESSION['Road_Block']=$_REQUEST['Road_Block'];
+     $_SESSION['District00']=$_REQUEST['District00'];
+     $_SESSION['PoliceStation00']=$_REQUEST['PoliceStation00'];
+     $_SESSION['PostOffice00']=$_REQUEST['PostOffice00'];
+     $_SESSION['Contact_No']=$_REQUEST['Contact_No'];
+     $_SESSION['Email00']=$_REQUEST['Email00'];
+     $_SESSION['Relationship00']=$_REQUEST['Relationship00'];
    
 
      
@@ -29,6 +38,20 @@
      echo $_SESSION['RI_Reason'];
      echo "<br>";
      echo $_SESSION['Name00'];
+     echo "<br>";
+     echo $_SESSION['Country00'];
+     echo "<br>";
+     echo $_SESSION['Village_House1'];
+     echo "<br>";
+     echo $_SESSION['PoliceStation00'];
+     echo "<br>";
+     echo $_SESSION['PostOffice00'];
+     echo "<br>";
+     echo $_SESSION['Contact_No'];
+     echo "<br>";
+     echo $_SESSION['Email00'];
+     echo "<br>";
+     echo $_SESSION['Relationship00'];
      echo "<br>";
      
   
@@ -123,7 +146,7 @@
 	     	<tr>
      		<td colspan="2"><label>Name:</label><b style="color: red">*</b></td>
      		
-     		<td><input style="width: 300px" type="text" id="name" name="Name00" placeholder="Name" ></td>
+     		<td><input style="width: 300px" type="text" id="name" name="Name00" placeholder="Name" required ></td>
      		<td colspan="3" width="40 px"></td>
      		
      	</tr>
@@ -131,7 +154,7 @@
      	<tr>
      		<td><label>Country:</label><b style="color: red"> *</b></td>
      		<td width="40 px"></td>
-     		<td><select style="width: 300px" name="country">
+     		<td><select style="width: 300px" name="Country00" required >
      				<option value="Select">~Select~</option>
      				<option value="Bangladesh">Bangladesh</option>
      				<option value="India">India</option>
@@ -158,7 +181,7 @@
      	<tr>
      		<td colspan="2"><label>Village/House:</label></td>
      		
-     		<td><input style="width: 300px" type="text" id="Village/House" placeholder="Village|House" ></td>
+     		<td><input style="width: 300px" type="text" id="Village/House" name="Village_House1" placeholder="Village|House" ></td>
      		<td colspan="3" width="40 px"></td>
      		
      	</tr>
@@ -166,7 +189,7 @@
      	<tr>
      		<td colspan="2"><label>Road/Block/Sector:</label></td>
      		
-     		<td><input style="width: 300px" type="text" id="Road1" placeholder="Road" ></td>
+     		<td><input style="width: 300px" type="text" id="Road1" name="Road_Block" placeholder="Road" ></td>
      		<td colspan="3" width="40 px"></td>
      		
      	</tr>
@@ -174,7 +197,7 @@
      	<tr>
      		<td><label>District:</label><b style="color: red"> *</b></td>
      		<td width="40 px"></td>
-     		<td><select style="width: 300px" name="District">
+     		<td><select style="width: 300px" name="District00" required >
      				<option value="Select">~Select~</option>
      				<option value="Dhaka">Dhaka</option>
      				<option value="Bogra">Bogra</option>
@@ -189,7 +212,7 @@
      	<tr>
      		<td><label>Police Station:</label><b style="color: red"> *</b></td>
      		<td width="40 px"></td>
-     		<td><select style="width: 300px" name="PoliceStation">
+     		<td><select style="width: 300px" name="PoliceStation00" required >
      				<option value="Select">~Select~</option>
      				<option value="Dhaka">Dhaka</option>
      				<option value="Bogra">Bogra</option>
@@ -204,7 +227,7 @@
      	<tr>
      		<td><label>Post Office:</label><b style="color: red"> *</b></td>
      		<td width="40 px"></td>
-     		<td><select style="width: 300px" name="PostOffice">
+     		<td><select style="width: 300px" name="PostOffice00" required >
      				<option value="Select">~Select~</option>
      				<option value="Dhaka">Dhaka</option>
      				<option value="Bogra">Bogra</option>
@@ -221,7 +244,7 @@
 	     	<tr>
      		<td colspan="2"><label>Contact No:</label><b style="color: red">*</b></td>
      		
-     		<td><input style="width: 300px" type="id" id="Number" placeholder="Contuct Number" ></td>
+     		<td><input style="width: 300px" type="id" id="Number" name="Contact_No" placeholder="Contuct Number" required ></td>
      		<td colspan="3" width="40 px"></td>
      		
      	</tr>
@@ -231,7 +254,7 @@
 	     	<tr>
      		<td colspan="2"><label>Email:</label></td>
      		
-     		<td><input style="width: 300px" type="text" id="email" placeholder="Email Address"></td>
+     		<td><input style="width: 300px" type="text" id="email" name="Email00" placeholder="Email Address" required ></td>
      		<td colspan="3" width="40 px"></td>
      		
      	</tr>
@@ -239,7 +262,7 @@
      	<tr>
      		<td><label>Relationship:</label><b style="color: red"> *</b></td>
      		<td width="40 px"></td>
-     		<td><select style="width: 300px" name="Relationship">
+     		<td><select style="width: 300px" name="Relationship00" required >
      				<option value="Select">~Select~</option>
      				<option value="Father">Father</option>
      				<option value="Mother">Mother</option>
