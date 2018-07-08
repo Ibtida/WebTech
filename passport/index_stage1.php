@@ -10,6 +10,13 @@
      $_SESSION['PassportType']=$_REQUEST['PassportType'];
      $_SESSION['DeliveryType']=$_REQUEST['DeliveryType'];
      $_SESSION['birthId']=$_REQUEST['birthId'];
+     $_SESSION['NationalIdNo']=$_REQUEST['NationalIdNo'];
+     $_SESSION['NameApplicant']=$_REQUEST['NameApplicant'];
+     $_SESSION['TaxIdNo']=$_REQUEST['TaxIdNo'];
+     $_SESSION['FirstPartGN']=$_REQUEST['FirstPartGN'];
+     $_SESSION['Foot']=$_REQUEST['Foot'];
+     $_SESSION['inch']=$_REQUEST['inch'];
+
      
      echo $_SESSION['Date1'];
      echo "<br>";
@@ -24,6 +31,20 @@
      echo $_SESSION['DeliveryType'];
      echo "<br>";
      echo $_SESSION['birthId'];
+     echo "<br>";
+     echo $_SESSION['NationalIdNo'];
+     echo "<br>";
+     echo $_SESSION['NameApplicant'];
+     echo "<br>";
+     echo $_SESSION['TaxIdNo'];
+     echo "<br>";
+     echo $_SESSION['FirstPartGN'];
+     echo "<br>";
+     echo $_SESSION['Foot'];
+     echo "<br>";
+     echo $_SESSION['inch'];
+
+
      
      
  }
@@ -137,7 +158,7 @@
      		<td colspan="3"><h3>Personal Information</h3></td>
      		<td><label>National Id No:</label><b style="color: red"> *</b></td>
      		<td width="40 px"></td>
-     		<td><input style="width: 300px" type="id" id="id" placeholder="ID" ></td>
+     		<td><input style="width: 300px" name="NationalIdNo" type="id" id="id" placeholder="ID" ></td>
      		
      	</tr>
 
@@ -148,18 +169,18 @@
      		
      		<td><label>Tax Id No:</label></td>
      		<td width="40 px"></td>
-     		<td><input style="width: 300px" type="id" id="id" placeholder="ID" ></td>
+     		<td><input style="width: 300px" name="TaxIdNo" type="id" id="id" placeholder="ID" ></td>
      	</tr>
 
      	<tr>
      		<td colspan="2"><label>First Part (Given Name):</label></td>
      		
-     		<td><input style="width: 300px" type="text" id="name" placeholder="name" required></td>
+     		<td><input style="width: 300px" type="text" id="name" name="FirstPartGN" placeholder="name" required></td>
      		
      		<td><label>Height:</label><b style="color: red"> *</b></td>
      		<td width="40 px"></td>
-     		<td><input style="width: 30px" type="No" id="height" ><b>cm</b>
-     			<input style="width: 30px" type="No" id="height" ><b>inch</b>
+     		<td><input style="width: 30px" type="No" id="height" name="Foot" ><b>cm</b>
+     			<input style="width: 30px" type="No" id="height" name="inch"><b>inch</b>
      		</td>
      	</tr>
 
