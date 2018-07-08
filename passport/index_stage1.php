@@ -40,6 +40,12 @@
      $_SESSION['PostOffice1']=$_REQUEST['PostOffice1'];
      $_SESSION['ApplicantProfession']=$_REQUEST['ApplicantProfession'];
      $_SESSION['BCountry']=$_REQUEST['BCountry'];
+     $_SESSION['Birth_District']=$_REQUEST['Birth_District'];
+     $_SESSION['Village_house']=$_REQUEST['Village_house'];
+     $_SESSION['Road_Block']=$_REQUEST['Road_Block'];
+     $_SESSION['District12']=$_REQUEST['District12'];
+     $_SESSION['Police_Station']=$_REQUEST['Police_Station'];
+     $_SESSION['Post_Office1']=$_REQUEST['Post_Office1'];
 
      
      echo $_SESSION['Date1'];
@@ -51,6 +57,14 @@
      echo $_SESSION['ApplicationType'];
      echo "<br>";
      echo $_SESSION['PassportType'];
+      /*if($_REQUEST[PassportType]='Select')
+               {
+                    echo "abc";
+               }
+               else
+               {
+                    echo $_SESSION['PassportType'];
+               }*/
      echo "<br>";
      echo $_SESSION['deliveryType'];
      echo "<br>";
@@ -115,6 +129,19 @@
      echo $_SESSION['ApplicantProfession'];
      echo "<br>";
      echo $_SESSION['BCountry'];
+     echo "<br>";
+     echo $_SESSION['Birth_District'];
+     echo "<br>";
+     echo $_SESSION['Village_house'];
+     echo "<br>";
+     echo $_SESSION['Road_Block'];
+     echo "<br>";
+     echo $_SESSION['District12'];
+
+     echo "<br>";
+     echo $_SESSION['Police_Station'];
+     echo "<br>";
+     echo $_SESSION['Post_Office1'];
      
 
 
@@ -149,7 +176,7 @@
      <hr/>
 
 
-<form name="index_stage1" method="POST" action="" >
+<form name="index_stage1" method="POST" action="stage2.php" >
 
 
      <table>
@@ -160,7 +187,7 @@
      		<td rowspan="100" width="150 px"></td>
      		<td><label>Date of Birth:</label><b style="color: red"> *</b></td>
      		<td width="40 px"></td>
-     		<td ><input style="width: 300px" type="date" id="birthDate" name="Date1" class="form-control"></td>
+     		<td ><input style="width: 300px" type="date" id="birthDate" name="Date1" class="form-control" required></td>
      	</tr>
      	<tr>
      		
@@ -181,9 +208,10 @@
      		
      		<td rowspan="3"><label>Gender:</label><b style="color: red"> *</b></td>
      		<td width="40 px"></td>
-     		<td rowspan="3"><input type="radio" name="gender" value="Male">Male<br>
-     		<input type="radio" name="gender" value="FeMale">Female<br>
-     		<input type="radio" name="gender" value="others">Others</td>
+     		<td rowspan="3">
+               <input type="radio" name="gender" value="Male" required>Male<br>
+     		<input type="radio" name="gender" value="FeMale" required>Female<br>
+     		<input type="radio" name="gender" value="others" required>Others</td>
      	</tr>
 
      	<tr>
@@ -208,6 +236,7 @@
      				<option value="C">C</option>
 
      			</select>
+
      		</td>
      		
      		<td width="40 px"></td>
@@ -225,21 +254,21 @@
      		
      		<td><label>Birth Id No:</label><b style="color: red"> *</b></td>
      		<td width="40 px"></td>
-     		<td><input style="width: 300px" name="birthId" type="id" id="id" placeholder="ID" ></td>
+     		<td><input style="width: 300px" name="birthId" type="id" id="id" placeholder="ID" required></td>
 
      	</tr>
      	<tr>
      		<td colspan="3"><h3>Personal Information</h3></td>
      		<td><label>National Id No:</label><b style="color: red"> *</b></td>
      		<td width="40 px"></td>
-     		<td><input style="width: 300px" name="NationalIdNo" type="id" id="id" placeholder="ID" ></td>
+     		<td><input style="width: 300px" name="NationalIdNo" type="id" id="id" placeholder="ID" required></td>
      		
      	</tr>
 
      	<tr>
      		<td colspan="2"><label>Name of Applicant:</label><b style="color: red"> *</b></td>
      		
-     		<td><input style="width: 300px" type="text" id="name" name="NameApplicant" placeholder="name" ></td>
+     		<td><input style="width: 300px" type="text" id="name" name="NameApplicant" placeholder="name" required ></td>
      		
      		<td><label>Tax Id No:</label></td>
      		<td width="40 px"></td>
@@ -253,19 +282,19 @@
      		
      		<td><label>Height:</label><b style="color: red"> *</b></td>
      		<td width="40 px"></td>
-     		<td><input style="width: 30px" type="No" id="height" name="Foot" ><b>cm</b>
-     			<input style="width: 30px" type="No" id="height" name="inch"><b>inch</b>
+     		<td><input style="width: 30px" type="No" id="height" name="Foot" required ><b>cm</b>
+     			<input style="width: 30px" type="No" id="height" name="inch" required><b>inch</b>
      		</td>
      	</tr>
 
      	<tr>
      		<td colspan="2"><label>Second Part (Surname):</label><b style="color: red">*</b></td>
      		
-     		<td><input style="width: 300px" type="text" id="name" name="SecondPartSN" placeholder="name" ></td>
+     		<td><input style="width: 300px" type="text" id="name" name="SecondPartSN" placeholder="name" required ></td>
      		
      		<td><label>Religion:</label><b style="color: red"> *</b></td>
      		<td width="40 px"></td>
-     		<td><select style="width: 300px" name="Religion">
+     		<td><select style="width: 300px" name="Religion" required>
      				<option value="Select">~Select~</option>
      				<option value="Muslim">Muslim</option>
      				<option value="Hindu">Hindu</option>
@@ -282,13 +311,13 @@
      		
      		<td><label>Email:</label><b style="color: red"> *</b></td>
      		<td width="40 px"></td>
-     		<td><input style="width: 300px" type="text" id="email" name="EmailAddress" placeholder="Email Address"></td>
+     		<td><input style="width: 300px" type="text" id="email" name="EmailAddress" placeholder="Email Address" required></td>
      	</tr>
 
      	<tr>
      		<td colspan="2"><label>Father's Name:</label><b style="color: red">*</b></td>
      		
-     		<td><input style="width: 300px" type="text" id="Fathername" name="FatherName" placeholder="FatherName" ></td>
+     		<td><input style="width: 300px" type="text" id="Fathername" name="FatherName" placeholder="FatherName" required></td>
      		
      		<td colspan="3"><h3>Citizenship Information</b></h3>
      		
@@ -297,7 +326,7 @@
      	<tr>
      		<td colspan="2"><label>Father's Nationality:</label><b style="color: red">*</b></td>
      		
-     		<td><select style="width: 300px" name="FNationality">
+     		<td><select style="width: 300px" name="FNationality" required>
      				<option value="Select">~Select~</option>
      				<option value="Bangladeshi">Bangladeshi</option>
      				<option value="Hindustani">Hindustani</option>
@@ -309,7 +338,7 @@
      		
      		<td><label>Nationality:</label><b style="color: red"> *</b></td>
      		<td width="40 px"></td>
-     		<td><select style="width: 300px" name="CitizenNationality">
+     		<td><select style="width: 300px" name="CitizenNationality" required>
      				<option value="Select">~Select~</option>
      				<option value="Bangladeshi">Bangladeshi</option>
      				<option value="Hindustani">Hindustani</option>
@@ -323,7 +352,7 @@
      	<tr>
      		<td colspan="2"><label>Father's Profession:</label><b style="color: red">*</b></td>
      		
-     		<td><select style="width: 300px" name="FProfession">
+     		<td><select style="width: 300px" name="FProfession" required>
      				<option value="Select">~Select~</option>
      				<option value="Businessman">Businessman</option>
      				<option value="Teacher">Teacher</option>
@@ -335,7 +364,7 @@
      		
      		<td><label>Citizenship Status:</label><b style="color: red"> *</b></td>
      		<td width="40 px"></td>
-     		<td><select style="width: 300px" name="CitizenStatus">
+     		<td><select style="width: 300px" name="CitizenStatus" required>
      				<option value="Select">~Select~</option>
      				<option value="Birth">Birth</option>
      				<option value="Tourist">Tourist</option>
@@ -350,14 +379,14 @@
      		<td><label>Mother's Name:</label><b style="color: red">*</b></td>
      		<td width="40 px"></td>
      		<td>
-     			<input style="width: 300px" type="text" id="Mothername" name="MotherName" placeholder="MotherName" >
+     			<input style="width: 300px" type="text" id="Mothername" name="MotherName" placeholder="MotherName" required >
      		</td>
      		
      		<td><label>Dual Citizenship:</label><b style="color: red"> *</b></td>
      		<td width="40 px"></td>
      		<td>
-	     		<input type="radio" name="Dcitizenship" value="Yes" >Yes<br>
-	     		<input type="radio" name="Dcitizenship" value="No">No
+	     		<input type="radio" name="Dcitizenship" value="Yes" required >Yes<br>
+	     		<input type="radio" name="Dcitizenship" value="No" required>No
 	     	</td>
 
      	</tr>
@@ -365,7 +394,7 @@
      	<tr>
      		<td colspan="2"><label>Mother's Nationality:</label><b style="color: red">*</b></td>
      		
-     		<td><select style="width: 300px" name="MNationality">
+     		<td><select style="width: 300px" name="MNationality" required>
      				<option value="Select">~Select~</option>
      				<option value="Bangladeshi">Bangladeshi</option>
      				<option value="Hindustani">Hindustani</option>
@@ -381,7 +410,7 @@
      	<tr>
      		<td colspan="2"><label>Mother's Profession:</label><b style="color: red">*</b></td>
      		
-     		<td><select style="width: 300px" name="MProfession">
+     		<td><select style="width: 300px" name="MProfession" required>
      				<option value="Select">~Select~</option>
      				<option value="Businessman">Businessman</option>
      				<option value="Teacher">Teacher</option>
@@ -425,7 +454,7 @@
      		</td>
      		
      		<td colspan="2"><label>District:</label><b style="color: red">*</b></td>
-     		<td><select style="width: 300px" name="District">
+     		<td><select style="width: 300px" name="District" required>
      				<option value="Select">~Select~</option>
      				<option value="Dhaka">Dhaka</option>
      				<option value="Bogra">Bogra</option>
@@ -450,7 +479,7 @@
      		</td>
      		
      		<td colspan="2"><label>Police Station:</label><b style="color: red">*</b></td>
-     		<td><select style="width: 300px" name="PoliceStation">
+     		<td><select style="width: 300px" name="PoliceStation" required>
      				<option value="Select">~Select~</option>
      				<option value="Banani">Banani</option>
      				<option value="Bogra">Bogra</option>
@@ -464,7 +493,7 @@
      	<tr>
      		<td colspan="2"><label>Marital Status:</label><b style="color: red">*</b></td>
      		
-     		<td><select style="width: 300px" name="MaritalStatus">
+     		<td><select style="width: 300px" name="MaritalStatus" required>
      				<option value="Select">~Select~</option>
      				<option value="Married">Married</option>
      				<option value="UnMarried">Unmarried</option>
@@ -474,7 +503,7 @@
      		</td>
      		
      		<td colspan="2"><label>Post Office:</label><b style="color: red">*</b></td>
-     		<td><select style="width: 300px" name="PostOffice1">
+     		<td><select style="width: 300px" name="PostOffice1" required>
      				<option value="Select">~Select~</option>
      				<option value="Banani">Banani</option>
      				<option value="Bogra">Bogra</option>
@@ -488,7 +517,7 @@
      	<tr>
      		<td colspan="2"><label>Applicant's Profession:</label><b style="color: red">*</b></td>
      		
-     		<td><select style="width: 300px" name="ApplicantProfession">
+     		<td><select style="width: 300px" name="ApplicantProfession" required>
      				<option value="Select">~Select~</option>
      				<option value="Businessman">Businessman</option>
      				<option value="Teacher">Teacher</option>
@@ -505,7 +534,7 @@
      	<tr>
      		<td colspan="2"><label>Country of Birth:</label><b style="color: red">*</b></td>
      		
-     		<td><select style="width: 300px" name="BCountry">
+     		<td><select style="width: 300px" name="BCountry" required>
      				<option value="Select">~Select~</option>
      				<option value="Bangladesh">Bangladesh</option>
      				<option value="India">India</option>
@@ -520,7 +549,8 @@
      	</tr>
 
      	<tr>
-     		<td colspan="2"><label>Birth District:</label><b style="color: red">*</b><td><select style="width: 300px" name="Birth_District">
+     		<td colspan="2"><label>Birth District:</label><b style="color: red">*</b>
+               <td><select style="width: 300px" name="Birth_District" required>
      				<option value="Select">~Select~</option>
      				<option value="Banani">Banani</option>
      				<option value="Bogra">Bogra</option>
@@ -533,7 +563,7 @@
      		<td><label>Village/House:</label></td>
      		<td width="40 px"></td>
      		<td>
-     			<input style="width: 300px" type="text" id="VillageHouse" placeholder="Village_house" >
+     			<input style="width: 300px" type="text" id="VillageHouse" name="Village_house" placeholder="Village_house" >
      		</td>
      	</tr>
 
@@ -541,13 +571,14 @@
      		<td width="10 px" colspan="3"></td>
      		<td colspan="2"><label>Road/Block/Sector:</label></td>
      		<td>
-     			<input style="width: 300px" type="text" id="Road_Block" placeholder="Road_Block" >
+     			<input style="width: 300px" type="text" id="Road_Block" name="Road_Block" placeholder="Road_Block" >
      		</td>
      	</tr>
 
      	<tr>
      		<td width="10 px" colspan="3"></td>
-     		<td colspan="2"><label>District:</label><b style="color: red">*</b><td><select style="width: 300px" name="District">
+     		<td colspan="2"><label>District:</label><b style="color: red">*</b>
+               <td><select style="width: 300px" name="District12" required>
      				<option value="Select">~Select~</option>
      				<option value="Banani">Banani</option>
      				<option value="Bogra">Bogra</option>
@@ -561,7 +592,7 @@
      	<tr>
      		<td width="10 px" colspan="3"></td>
      		<td colspan="2"><label>Police Station:</label><b style="color: red">*</b></td>
-     		<td><select style="width: 300px" name="District">
+     		<td><select style="width: 300px" name="Police_Station" required>
      				<option value="Select">~Select~</option>
      				<option value="Banani">Banani</option>
      				<option value="Bogra">Bogra</option>
@@ -575,7 +606,7 @@
      	<tr>
      		<td width="10 px" colspan="3"></td>
      		<td colspan="2"><label>Post Office:</label><b style="color: red">*</b></td>
-     		<td><select style="width: 300px" name="PostOffice">
+     		<td><select style="width: 300px" name="Post_Office1" required>
      				<option value="Select">~Select~</option>
      				<option value="Banani">Banani</option>
      				<option value="Bogra">Bogra</option>

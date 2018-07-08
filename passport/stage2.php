@@ -1,3 +1,31 @@
+<?php
+
+ session_start();
+ if($_SERVER['REQUEST_METHOD']=="POST")
+ {
+     $_SESSION['Date1']=$_REQUEST['Date1'];
+     $_SESSION['country']=$_REQUEST['country12'];
+     $_SESSION['gender']=$_REQUEST['gender'];
+   
+
+     
+     echo $_SESSION['Date1'];
+     echo "<br>";
+     echo $_SESSION['country'];
+     echo "<br>";
+     
+  
+     
+
+
+
+     
+     
+ }
+
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
