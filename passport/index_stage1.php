@@ -7,6 +7,9 @@
      $_SESSION['country']=$_REQUEST['country12'];
      $_SESSION['gender']=$_REQUEST['gender'];
      $_SESSION['ApplicationType']='New Application';
+     $_SESSION['PassportType']=$_REQUEST['PassportType'];
+     $_SESSION['DeliveryType']=$_REQUEST['DeliveryType'];
+     $_SESSION['birthId']=$_REQUEST['birthId'];
      
      echo $_SESSION['Date1'];
      echo "<br>";
@@ -15,6 +18,12 @@
      echo $_SESSION['gender'];
      echo "<br>";
      echo $_SESSION['ApplicationType'];
+     echo "<br>";
+     echo $_SESSION['PassportType'];
+     echo "<br>";
+     echo $_SESSION['DeliveryType'];
+     echo "<br>";
+     echo $_SESSION['birthId'];
      
      
  }
@@ -97,7 +106,7 @@
      		<td><label>Passport Type:</label><b style="color: red"> *</b></td>
      		<td width="40 px"></td>
      		<td >
-     			<select style="width: 300px" name="Type" required>
+     			<select style="width: 300px" name="PassportType" required>
      				<option value="Select">~Select~</option>
      				<option value="A">A</option>
      				<option value="B">B</option>
@@ -115,13 +124,13 @@
      		<td><label>Delivery Type:</label></td>
      		<td width="40 px"></td>
      		<td>
-     		<input type="radio" name="delivery" value="Regular" >Regular<br>
-     		<input type="radio" name="delivery" value="express">Express
+     		<input type="radio" name="deliveryType" value="Regular" >Regular<br>
+     		<input type="radio" name="deliveryType" value="express">Express
      		</td>
      		
      		<td><label>Birth Id No:</label><b style="color: red"> *</b></td>
      		<td width="40 px"></td>
-     		<td><input style="width: 300px" name="birthDate" type="id" id="id" placeholder="ID" ></td>
+     		<td><input style="width: 300px" name="birthId" type="id" id="id" placeholder="ID" ></td>
 
      	</tr>
      	<tr>
