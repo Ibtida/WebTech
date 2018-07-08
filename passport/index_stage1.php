@@ -16,6 +16,13 @@
      $_SESSION['FirstPartGN']=$_REQUEST['FirstPartGN'];
      $_SESSION['Foot']=$_REQUEST['Foot'];
      $_SESSION['inch']=$_REQUEST['inch'];
+     $_SESSION['SecondPartSN']=$_REQUEST['SecondPartSN'];
+     $_SESSION['Religion']=$_REQUEST['Religion'];
+     $_SESSION['Guardian']=$_REQUEST['Guardian'];
+     $_SESSION['EmailAddress']=$_REQUEST['EmailAddress'];
+     $_SESSION['FatherName']=$_REQUEST['FatherName'];
+     $_SESSION['FNationality']=$_REQUEST['FNationality'];
+     $_SESSION['CitizenNationality']=$_REQUEST['CitizenNationality'];
 
      
      echo $_SESSION['Date1'];
@@ -43,6 +50,21 @@
      echo $_SESSION['Foot'];
      echo "<br>";
      echo $_SESSION['inch'];
+     echo "<br>";
+     echo $_SESSION['SecondPartSN'];
+     echo "<br>";
+     echo $_SESSION['Religion'];
+     echo "<br>";
+     echo $_SESSION['Guardian'];
+     echo "<br>";
+     echo $_SESSION['EmailAddress'];
+     echo "<br>";
+     echo $_SESSION['FatherName'];
+     echo "<br>";
+     echo $_SESSION['FNationality'];
+     echo "<br>";
+     echo $_SESSION['CitizenNationality'];
+
 
 
      
@@ -187,7 +209,7 @@
      	<tr>
      		<td colspan="2"><label>Second Part (Surname):</label><b style="color: red">*</b></td>
      		
-     		<td><input style="width: 300px" type="text" id="name" placeholder="name" ></td>
+     		<td><input style="width: 300px" type="text" id="name" name="SecondPartSN" placeholder="name" ></td>
      		
      		<td><label>Religion:</label><b style="color: red"> *</b></td>
      		<td width="40 px"></td>
@@ -208,13 +230,13 @@
      		
      		<td><label>Email:</label><b style="color: red"> *</b></td>
      		<td width="40 px"></td>
-     		<td><input style="width: 300px" type="text" id="email" placeholder="Email Address"></td>
+     		<td><input style="width: 300px" type="text" id="email" name="EmailAddress" placeholder="Email Address"></td>
      	</tr>
 
      	<tr>
      		<td colspan="2"><label>Father's Name:</label><b style="color: red">*</b></td>
      		
-     		<td><input style="width: 300px" type="text" id="Fathername" placeholder="FatherName" ></td>
+     		<td><input style="width: 300px" type="text" id="Fathername" name="FatherName" placeholder="FatherName" ></td>
      		
      		<td colspan="3"><h3>Citizenship Information</b></h3>
      		
