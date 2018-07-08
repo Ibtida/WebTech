@@ -8,7 +8,7 @@
      $_SESSION['gender']=$_REQUEST['gender'];
      $_SESSION['ApplicationType']='New Application';
      $_SESSION['PassportType']=$_REQUEST['PassportType'];
-     $_SESSION['DeliveryType']=$_REQUEST['DeliveryType'];
+     $_SESSION['deliveryType']=$_REQUEST['deliveryType'];
      $_SESSION['birthId']=$_REQUEST['birthId'];
      $_SESSION['NationalIdNo']=$_REQUEST['NationalIdNo'];
      $_SESSION['NameApplicant']=$_REQUEST['NameApplicant'];
@@ -18,11 +18,28 @@
      $_SESSION['inch']=$_REQUEST['inch'];
      $_SESSION['SecondPartSN']=$_REQUEST['SecondPartSN'];
      $_SESSION['Religion']=$_REQUEST['Religion'];
-     $_SESSION['Guardian']=$_REQUEST['Guardian'];
+     $_SESSION['guardian']=$_REQUEST['guardian'];
      $_SESSION['EmailAddress']=$_REQUEST['EmailAddress'];
      $_SESSION['FatherName']=$_REQUEST['FatherName'];
      $_SESSION['FNationality']=$_REQUEST['FNationality'];
      $_SESSION['CitizenNationality']=$_REQUEST['CitizenNationality'];
+     $_SESSION['FProfession']=$_REQUEST['FProfession'];
+     $_SESSION['CitizenStatus']=$_REQUEST['CitizenStatus'];
+     $_SESSION['MotherName']=$_REQUEST['MotherName'];
+     $_SESSION['Dcitizenship']=$_REQUEST['Dcitizenship'];
+     $_SESSION['MNationality']=$_REQUEST['MNationality'];
+     $_SESSION['MProfession']=$_REQUEST['MProfession'];
+     $_SESSION['VillageHouse']=$_REQUEST['VillageHouse'];
+     $_SESSION['SpouseName']=$_REQUEST['SpouseName'];
+     $_SESSION['RoadBlockSector']=$_REQUEST['RoadBlockSector'];
+     $_SESSION['SpouseNationality']=$_REQUEST['SpouseNationality'];
+     $_SESSION['District']=$_REQUEST['District'];
+     $_SESSION['SpouseProfession']=$_REQUEST['SpouseProfession'];
+     $_SESSION['PoliceStation']=$_REQUEST['PoliceStation'];
+     $_SESSION['MaritalStatus']=$_REQUEST['MaritalStatus'];
+     $_SESSION['PostOffice1']=$_REQUEST['PostOffice1'];
+     $_SESSION['ApplicantProfession']=$_REQUEST['ApplicantProfession'];
+     $_SESSION['BCountry']=$_REQUEST['BCountry'];
 
      
      echo $_SESSION['Date1'];
@@ -35,7 +52,7 @@
      echo "<br>";
      echo $_SESSION['PassportType'];
      echo "<br>";
-     echo $_SESSION['DeliveryType'];
+     echo $_SESSION['deliveryType'];
      echo "<br>";
      echo $_SESSION['birthId'];
      echo "<br>";
@@ -55,7 +72,7 @@
      echo "<br>";
      echo $_SESSION['Religion'];
      echo "<br>";
-     echo $_SESSION['Guardian'];
+     echo $_SESSION['guardian'];
      echo "<br>";
      echo $_SESSION['EmailAddress'];
      echo "<br>";
@@ -64,6 +81,41 @@
      echo $_SESSION['FNationality'];
      echo "<br>";
      echo $_SESSION['CitizenNationality'];
+     echo "<br>";
+     echo $_SESSION['FProfession'];
+     echo "<br>";
+     echo $_SESSION['CitizenStatus'];
+     echo "<br>";
+     echo $_SESSION['MotherName'];
+     echo "<br>";
+     echo $_SESSION['Dcitizenship'];
+     echo "<br>";
+     echo $_SESSION['MNationality'];
+     echo "<br>";
+     echo $_SESSION['MProfession'];
+     echo "<br>";
+     echo $_SESSION['VillageHouse'];
+     echo "<br>";
+     echo $_SESSION['SpouseName'];
+     echo "<br>";
+     echo $_SESSION['RoadBlockSector'];
+     echo "<br>";
+     echo $_SESSION['SpouseNationality'];
+     echo "<br>";
+     echo $_SESSION['District'];
+     echo "<br>";
+     echo $_SESSION['SpouseProfession'];
+     echo "<br>";
+     echo $_SESSION['PoliceStation'];
+     echo "<br>";
+     echo $_SESSION['MaritalStatus'];
+     echo "<br>";
+     echo $_SESSION['PostOffice1'];
+     echo "<br>";
+     echo $_SESSION['ApplicantProfession'];
+     echo "<br>";
+     echo $_SESSION['BCountry'];
+     
 
 
 
@@ -298,7 +350,7 @@
      		<td><label>Mother's Name:</label><b style="color: red">*</b></td>
      		<td width="40 px"></td>
      		<td>
-     			<input style="width: 300px" type="text" id="Mothername" placeholder="MotherName" >
+     			<input style="width: 300px" type="text" id="Mothername" name="MotherName" placeholder="MotherName" >
      		</td>
      		
      		<td><label>Dual Citizenship:</label><b style="color: red"> *</b></td>
@@ -342,33 +394,27 @@
      		<td><label>Village/House:</label></td>
      		<td width="40 px"></td>
      		<td>
-     			<input style="width: 300px" type="text" id="VillageHouse" placeholder="Village_house" >
+     			<input style="width: 300px" type="text" id="VillageHouse" name="VillageHouse" placeholder="Village_house" >
      		</td>
      	</tr>
 
      	<tr>
      		<td colspan="2"><label>Spouse's Name:</label><b style="color: red"></b></td>
      		
-     		<td><select style="width: 300px" name="MProfession">
-     				<option value="Select">~Select~</option>
-     				<option value="Businessman">Businessman</option>
-     				<option value="Teacher">Teacher</option>
-     				<option value="Engineer">Engineer</option>
-     				<option value="Doctor">Doctor</option>
-
-     			</select>
+     		<td>
+                    <input style="width: 300px" type="text" id="Spousename" name="SpouseName" placeholder="SpouseName" >
      		</td>
      		
      		<td colspan="2"><label>Road/Block/Sector:</label></td>
      		<td>
-     			<input style="width: 300px" type="text" id="Road_Block" placeholder="Road_Block" >
+     			<input style="width: 300px" type="text" id="Road_Block" name="RoadBlockSector" placeholder="Road_Block" >
      		</td>
      	</tr>
 
      	<tr>
      		<td colspan="2"><label>Spouse's Nationality:</label><b style="color: red"></b></td>
      		
-     		<td><select style="width: 300px" name="SpNationality">
+     		<td><select style="width: 300px" name="SpouseNationality">
      				<option value="Select">~Select~</option>
      				<option value="Bangladeshi">Bangladeshi</option>
      				<option value="Hindustani">Hindustani</option>
@@ -393,7 +439,7 @@
      	<tr>
      		<td colspan="2"><label>Spouse's Profession:</label><b style="color: red"></b></td>
      		
-     		<td><select style="width: 300px" name="SpProfession">
+     		<td><select style="width: 300px" name="SpouseProfession">
      				<option value="Select">~Select~</option>
      				<option value="Businessman">Businessman</option>
      				<option value="Teacher">Teacher</option>
@@ -404,7 +450,7 @@
      		</td>
      		
      		<td colspan="2"><label>Police Station:</label><b style="color: red">*</b></td>
-     		<td><select style="width: 300px" name="District">
+     		<td><select style="width: 300px" name="PoliceStation">
      				<option value="Select">~Select~</option>
      				<option value="Banani">Banani</option>
      				<option value="Bogra">Bogra</option>
@@ -428,7 +474,7 @@
      		</td>
      		
      		<td colspan="2"><label>Post Office:</label><b style="color: red">*</b></td>
-     		<td><select style="width: 300px" name="PostOffice">
+     		<td><select style="width: 300px" name="PostOffice1">
      				<option value="Select">~Select~</option>
      				<option value="Banani">Banani</option>
      				<option value="Bogra">Bogra</option>
@@ -442,7 +488,7 @@
      	<tr>
      		<td colspan="2"><label>Applicant's Profession:</label><b style="color: red">*</b></td>
      		
-     		<td><select style="width: 300px" name="SpProfession">
+     		<td><select style="width: 300px" name="ApplicantProfession">
      				<option value="Select">~Select~</option>
      				<option value="Businessman">Businessman</option>
      				<option value="Teacher">Teacher</option>
