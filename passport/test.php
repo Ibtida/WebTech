@@ -3,7 +3,9 @@
  session_start();
  if($_SERVER['REQUEST_METHOD']=="POST")
  {
-     $_SESSION['Date1']=$_REQUEST['Date1'];
+
+ 	//stage 1
+    $_SESSION['Date1']=$_REQUEST['Date1'];
      $_SESSION['country']=$_REQUEST['country12'];
      $_SESSION['gender']=$_REQUEST['gender'];
      $_SESSION['ApplicationType']='New Application';
@@ -47,7 +49,6 @@
      $_SESSION['Police_Station']=$_REQUEST['Police_Station'];
      $_SESSION['Post_Office1']=$_REQUEST['Post_Office1'];
 
-     
      echo $_SESSION['Date1'];
      echo "<br>";
      echo $_SESSION['country'];
@@ -134,6 +135,87 @@
      echo $_SESSION['Police_Station'];
      echo "<br>";
      echo $_SESSION['Post_Office1'];
+
+
+     //stage 2
+     $_SESSION['OfficeNo']=$_REQUEST['OfficeNo'];
+     $_SESSION['PassportNo']=$_REQUEST['PassportNo'];
+     $_SESSION['ResidenceNo']=$_REQUEST['ResidenceNo'];
+     $_SESSION['PlaceOfIssue']=$_REQUEST['PlaceOfIssue'];
+     $_SESSION['MobileNo']=$_REQUEST['MobileNo'];
+     $_SESSION['DateOfIssue']=$_REQUEST['DateOfIssue'];
+     $_SESSION['RI_Reason']=$_REQUEST['RI_Reason'];
+     $_SESSION['Name00']=$_REQUEST['Name00'];
+     $_SESSION['Country00']=$_REQUEST['Country00'];
+     $_SESSION['Village_House1']=$_REQUEST['Village_House1'];
+     $_SESSION['Road_Block']=$_REQUEST['Road_Block'];
+     $_SESSION['District00']=$_REQUEST['District00'];
+     $_SESSION['PoliceStation00']=$_REQUEST['PoliceStation00'];
+     $_SESSION['PostOffice00']=$_REQUEST['PostOffice00'];
+     $_SESSION['Contact_No']=$_REQUEST['Contact_No'];
+     $_SESSION['Email00']=$_REQUEST['Email00'];
+     $_SESSION['Relationship00']=$_REQUEST['Relationship00'];
+
+      echo $_SESSION['OfficeNo'];
+     echo "<br>";
+     echo $_SESSION['PassportNo'];
+     echo "<br>";
+     echo $_SESSION['ResidenceNo'];
+     echo "<br>";
+     echo $_SESSION['PlaceOfIssue'];
+     echo "<br>";
+     echo $_SESSION['MobileNo'];
+     echo "<br>";
+     echo $_SESSION['DateOfIssue'];
+     echo "<br>";
+     echo $_SESSION['RI_Reason'];
+     echo "<br>";
+     echo $_SESSION['Name00'];
+     echo "<br>";
+     echo $_SESSION['Country00'];
+     echo "<br>";
+     echo $_SESSION['Village_House1'];
+     echo "<br>";
+     echo $_SESSION['PoliceStation00'];
+     echo "<br>";
+     echo $_SESSION['PostOffice00'];
+     echo "<br>";
+     echo $_SESSION['Contact_No'];
+     echo "<br>";
+     echo $_SESSION['Email00'];
+     echo "<br>";
+     echo $_SESSION['Relationship00'];
+     echo "<br>";
+
+
+ 	//stage 3
+     $_SESSION['Payment']=$_REQUEST['Payment'];
+     $_SESSION['AmountType']=$_REQUEST['AmountType'];
+     $_SESSION['Amount']=$_REQUEST['Amount'];
+     $_SESSION['DateOfPayment']=$_REQUEST['DateOfPayment'];
+     $_SESSION['ReceiptNo']=$_REQUEST['ReceiptNo'];
+     $_SESSION['Bank']=$_REQUEST['Bank'];
+     $_SESSION['Branch']=$_REQUEST['Branch'];
+
+
+
+     echo $_SESSION['Payment'];
+     echo "<br>";
+     echo $_SESSION['AmountType'];
+     echo "<br>";
+     echo $_SESSION['Amount'];
+     echo "<br>";
+     echo $_SESSION['DateOfPayment'];
+     echo "<br>";
+     echo $_SESSION['ReceiptNo'];
+     echo "<br>";
+     echo $_SESSION['Bank'];
+     echo "<br>";
+     echo $_SESSION['Branch'];
+     echo "<br>";
+
+     
+     
      
 
 
