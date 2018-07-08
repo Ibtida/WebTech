@@ -15,7 +15,7 @@
      <p align="center">Filed marked with <b style="color: red">(*)</b> are mandatory</p>
      <hr/>
      <table>
-     	<form>
+     	<form action="stage3.php">
      		<tr>
      		<td rowspan="100" width="150 px"></td>
      		<td colspan="3"><h3>Applicant Contact Information</h3></td>

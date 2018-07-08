@@ -1,3 +1,31 @@
+<?php
+
+ session_start();
+ if($_SERVER['REQUEST_METHOD']=="POST")
+ {
+     $_SESSION['Date1']=$_REQUEST['Date1'];
+     $_SESSION['country']=$_REQUEST['country12'];
+     $_SESSION['gender']=$_REQUEST['gender'];
+     $_SESSION['ApplicationType']='New Application';
+     
+     echo $_SESSION['Date1'];
+     echo "<br>";
+     echo $_SESSION['country'];
+     echo "<br>";
+     echo $_SESSION['gender'];
+     echo "<br>";
+     echo $_SESSION['ApplicationType'];
+     
+     
+ }
+
+?>            
+               
+       
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,27 +38,33 @@
 	</style>
 </head>
 <body>
+
      <h2 align="center">PASSPORT APPLICATION - STAGE 1</h2>
      <p align="center"><i style="color: red">Before felling up the online application form read the <a href="www.guideline.com">guidelines</a> carefully</i></p>
      <p align="center">Filed marked with <b style="color: red">(*)</b> are mandatory</p>
      <hr/>
 
+
+<form name="index_stage1" method="POST" action="" >
+
+
      <table>
-     <form>
+     
      	<tr>
      		<td rowspan="100" width="150 px"></td>
      		<td colspan="3"><h3>Passport application information</h3></td>
      		<td rowspan="100" width="150 px"></td>
      		<td><label>Date of Birth:</label><b style="color: red"> *</b></td>
      		<td width="40 px"></td>
-     		<td ><input style="width: 300px" type="date" id="birthDate" class="form-control"></td>
+     		<td ><input style="width: 300px" type="date" id="birthDate" name="Date1" class="form-control"></td>
      	</tr>
      	<tr>
      		
      		<td><label>Applying In:</label><b style="color: red"> *</b></td>
      		<td width="40 px"></td>
      		<td >
-     			<select style="width: 300px" name="country">
+
+     			<select name="country12" style="width: 300px" required>
      				<option value="Bangladesh">Bangladesh</option>
      				<option value="India">India</option>
      				<option value="England">England</option>
@@ -38,6 +72,7 @@
      				<option value="China">China</option>
 
      			</select>
+
      		</td>
      		
      		<td rowspan="3"><label>Gender:</label><b style="color: red"> *</b></td>
@@ -62,7 +97,7 @@
      		<td><label>Passport Type:</label><b style="color: red"> *</b></td>
      		<td width="40 px"></td>
      		<td >
-     			<select style="width: 300px" name="country">
+     			<select style="width: 300px" name="Type" required>
      				<option value="Select">~Select~</option>
      				<option value="A">A</option>
      				<option value="B">B</option>
@@ -86,7 +121,7 @@
      		
      		<td><label>Birth Id No:</label><b style="color: red"> *</b></td>
      		<td width="40 px"></td>
-     		<td><input style="width: 300px" type="id" id="id" placeholder="ID" ></td>
+     		<td><input style="width: 300px" name="birthDate" type="id" id="id" placeholder="ID" ></td>
 
      	</tr>
      	<tr>
@@ -100,7 +135,7 @@
      	<tr>
      		<td colspan="2"><label>Name of Applicant:</label><b style="color: red"> *</b></td>
      		
-     		<td><input style="width: 300px" type="text" id="name" placeholder="name" ></td>
+     		<td><input style="width: 300px" type="text" id="name" name="NameApplicant" placeholder="name" ></td>
      		
      		<td><label>Tax Id No:</label></td>
      		<td width="40 px"></td>
@@ -110,7 +145,7 @@
      	<tr>
      		<td colspan="2"><label>First Part (Given Name):</label></td>
      		
-     		<td><input style="width: 300px" type="text" id="name" placeholder="name" ></td>
+     		<td><input style="width: 300px" type="text" id="name" placeholder="name" required></td>
      		
      		<td><label>Height:</label><b style="color: red"> *</b></td>
      		<td width="40 px"></td>
@@ -461,8 +496,8 @@
      	<tr>
      		<td width="10 px" colspan="3"></td>
      		<td align="right" colspan="3"> 
-     		<input type="submit" value="SAVE NOW & CONTINUE IN THE FUTURE">
-     		<input type="submit" value="SAVE & NEXT">
+     		<button>SAVE NOW & CONTINUE IN THE FUTURE<button>
+     		<input type="submit" name="saveNext" value="SAVE & NEXT">
      		</td>
      		
      		
@@ -473,9 +508,9 @@
      		
      	</tr>
 
-
-     </form>
      </table>
+     </form>
+     
 
 </body>
 </html>
