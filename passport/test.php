@@ -7,7 +7,7 @@ session_start();
 if($_SERVER['REQUEST_METHOD']=="POST")
 {
 		//stage 3
-     $_SESSION['Payment']=$_REQUEST['Payment'];
+     $_SESSION['payment']=$_REQUEST['payment'];
      $_SESSION['AmountType']=$_REQUEST['AmountType'];
      $_SESSION['Amount']=$_REQUEST['Amount'];
      $_SESSION['DateOfPayment']=$_REQUEST['DateOfPayment'];
@@ -75,7 +75,7 @@ echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++";
   //    echo $_SESSION['Relationship00'];
   //    echo "<br>";
 
-     
+
 
   //    echo 'DOB:'.$_SESSION['Date1'];
   //    echo "<br>";
