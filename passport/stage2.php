@@ -48,6 +48,108 @@
      $_SESSION['Police_Station']=$_REQUEST['Police_Station'];
      $_SESSION['Post_Office1']=$_REQUEST['Post_Office1'];
 
+     // echo $_SESSION['Date1'];
+     // echo "<br>";
+     // echo $_SESSION['country'];
+     // echo "<br>";
+     // echo $_SESSION['gender'];
+     // echo "<br>";
+     // echo $_SESSION['ApplicationType'];
+     // echo "<br>";
+     // echo $_SESSION['PassportType'];
+     //  /*if($_REQUEST[PassportType]='Select')
+     //           {
+     //                echo "abc";
+     //           }
+     //           else
+     //           {
+     //                echo $_SESSION['PassportType'];
+     //           }*/
+     // echo "<br>";
+     // echo $_SESSION['deliveryType'];
+     // echo "<br>";
+     // echo $_SESSION['birthId'];
+     // echo "<br>";
+     // echo $_SESSION['NationalIdNo'];
+     // echo "<br>";
+     // echo $_SESSION['NameApplicant'];
+     // echo "<br>";
+     // echo $_SESSION['TaxIdNo'];
+     // echo "<br>";
+     // echo $_SESSION['FirstPartGN'];
+     // echo "<br>";
+     // echo $_SESSION['Foot'];
+     // echo "<br>";
+     // echo $_SESSION['inch'];
+     // echo "<br>";
+     // echo $_SESSION['SecondPartSN'];
+     // echo "<br>";
+     // echo $_SESSION['Religion'];
+     // echo "<br>";
+     // echo $_SESSION['guardian'];
+     // echo "<br>";
+     // echo $_SESSION['EmailAddress'];
+     // echo "<br>";
+     // echo $_SESSION['FatherName'];
+     // echo "<br>";
+     // echo $_SESSION['FNationality'];
+     // echo "<br>";
+     // echo $_SESSION['CitizenNationality'];
+     // echo "<br>";
+     // echo $_SESSION['FProfession'];
+     // echo "<br>";
+     // echo $_SESSION['CitizenStatus'];
+     // echo "<br>";
+     // echo $_SESSION['MotherName'];
+     // echo "<br>";
+     // echo $_SESSION['Dcitizenship'];
+     // echo "<br>";
+     // echo $_SESSION['MNationality'];
+     // echo "<br>";
+     // echo $_SESSION['MProfession'];
+     // echo "<br>";
+     // echo $_SESSION['VillageHouse'];
+     // echo "<br>";
+     // echo $_SESSION['SpouseName'];
+     // echo "<br>";
+     // echo $_SESSION['RoadBlockSector'];
+     // echo "<br>";
+     // echo $_SESSION['SpouseNationality'];
+     // echo "<br>";
+     // echo $_SESSION['District'];
+     // echo "<br>";
+     // echo $_SESSION['SpouseProfession'];
+     // echo "<br>";
+     // echo $_SESSION['PoliceStation'];
+     // echo "<br>";
+     // echo $_SESSION['MaritalStatus'];
+     // echo "<br>";
+     // echo $_SESSION['PostOffice1'];
+     // echo "<br>";
+     // echo $_SESSION['ApplicantProfession'];
+     // echo "<br>";
+     // echo $_SESSION['BCountry'];
+     // echo "<br>";
+     // echo $_SESSION['Birth_District'];
+     // echo "<br>";
+     // echo $_SESSION['Village_house'];
+     // echo "<br>";
+     // echo $_SESSION['Road_Block'];
+     // echo "<br>";
+     // echo $_SESSION['District12'];
+
+     // echo "<br>";
+     // echo $_SESSION['Police_Station'];
+     // echo "<br>";
+     // echo $_SESSION['Post_Office1'];
+
+}
+?>
+
+
+<?php 
+
+     echo 'page 1 value <br>';
      echo $_SESSION['Date1'];
      echo "<br>";
      echo $_SESSION['country'];
@@ -57,14 +159,6 @@
      echo $_SESSION['ApplicationType'];
      echo "<br>";
      echo $_SESSION['PassportType'];
-      /*if($_REQUEST[PassportType]='Select')
-               {
-                    echo "abc";
-               }
-               else
-               {
-                    echo $_SESSION['PassportType'];
-               }*/
      echo "<br>";
      echo $_SESSION['deliveryType'];
      echo "<br>";
@@ -144,6 +238,15 @@
      echo $_SESSION['Post_Office1'];
 
 
+?>
+
+
+<!-- 
+<?php
+
+ session_start();
+ if($_SERVER['REQUEST_METHOD']=="POST")
+ {
      //stage 2
      $_SESSION['OfficeNo']=$_REQUEST['OfficeNo'];
      $_SESSION['PassportNo']=$_REQUEST['PassportNo'];
@@ -206,7 +309,7 @@
  }
 
 ?>
-
+ -->
 
 <!DOCTYPE html>
 <html>
