@@ -197,8 +197,8 @@
      			<td><label>Payment Type:</label></td>
 	     		<td width="40 px"></td>
 	     		<td>
-	     		<input type="radio" name="payment" value="Regular" >Online<br>
-	     		<input type="radio" name="payment" value="express">Non-Online
+	     		<input type="radio" name="payment" value="Online" checked >Online <br>
+	     		<input type="radio" name="payment" value="Non-Online">Non-Online
 	     		</td>
 	     		<td colspan="3" width="40 px"></td>
      		</tr>
@@ -222,7 +222,7 @@
      				<option value="Rupi">Rupi</option>
 
      			</select>
-     			<input style="width: 150px" type="value" id="input" name="Amount" placeholder="Amount" >
+     			<input style="width: 150px" type="value" id="input" name="Amount" placeholder="Amount" required >
      			</td>
 	     		<td colspan="3" width="40 px"></td>
      		
@@ -231,13 +231,13 @@
      		<tr>
 	     		<td colspan="2"><label>Date of Payment:</label><b style="color: red">*</b></td>
 	     		
-	     		<td ><input style="width: 300px" type="date" id="birthDate" name="DateOfPayment" class="form-control"></td>
+	     		<td ><input style="width: 300px" type="date" id="birthDate" name="DateOfPayment" class="form-control" required></td>
 	     		<td colspan="3" width="40 px"></td>
      		
      		</tr>
      		<tr>
      			<td colspan="2"><label>Receipt No:</label><b style="color: red">*</b></td>
-	     		<td><input style="width: 300px" type="id" id="id" name="ReceiptNo" placeholder="Receipt Number"></td>
+	     		<td><input style="width: 300px" type="id" id="id" name="ReceiptNo" placeholder="Receipt Number" required></td>
 	     		<td colspan="3" width="40 px"></td>
      		</tr>
 

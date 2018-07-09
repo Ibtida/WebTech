@@ -1,9 +1,4 @@
 
-       
-
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -95,7 +90,7 @@
      		<td><label>Delivery Type:</label></td>
      		<td width="40 px"></td>
      		<td>
-     		<input type="radio" name="deliveryType" value="Regular" >Regular<br>
+     		<input type="radio" name="deliveryType" value="Regular" checked >Regular<br>
      		<input type="radio" name="deliveryType" value="express">Express
      		</td>
      		
@@ -158,7 +153,7 @@
      		
      		<td><label>Email:</label><b style="color: red"> *</b></td>
      		<td width="40 px"></td>
-     		<td><input style="width: 300px" type="text" id="email" name="EmailAddress" placeholder="Email Address" required></td>
+     		<td><input style="width: 300px" type="email" id="email" name="EmailAddress" placeholder="Email Address" required></td>
      	</tr>
 
      	<tr>
@@ -232,7 +227,7 @@
      		<td><label>Dual Citizenship:</label><b style="color: red"> *</b></td>
      		<td width="40 px"></td>
      		<td>
-	     		<input type="radio" name="Dcitizenship" value="Yes" required >Yes<br>
+	     		<input type="radio" name="Dcitizenship" value="Yes" required checked>Yes<br>
 	     		<input type="radio" name="Dcitizenship" value="No" required>No
 	     	</td>
 

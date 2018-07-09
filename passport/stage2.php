@@ -340,7 +340,7 @@
 	     	<tr>
      		<td colspan="2"><label>Email:</label></td>
      		
-     		<td><input style="width: 300px" type="text" id="email" name="Email00" placeholder="Email Address" required ></td>
+     		<td><input style="width: 300px" type="email" id="email" name="Email00" placeholder="Email Address" required ></td>
      		<td colspan="3" width="40 px"></td>
      		
      	</tr>
