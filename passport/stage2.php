@@ -238,6 +238,16 @@
      echo $_SESSION['Post_Office1'];
 
 
+     echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++";
+     echo "<table border='1'>";
+     foreach ($_SESSION as $name => $value)
+          {
+               echo "<tr>";
+              echo "<td>".$name."</td><td>".$value."</td>";
+              echo "</tr>";
+          }
+     echo "</echo>";
+
 ?>
 
 
