@@ -1,3 +1,5 @@
+
+<?php require 'server.php'; ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,7 +16,7 @@
 <div class="grid">
 <div class="text-center pad10"><h1>Login</h1></div>
 
-  <form action="https://httpbin.org/post" method="POST" class="form login">
+  <form method="POST" class="form login">
 
     <div class="form__field">
       <label for="login__username"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#user"></use></svg><span class="hidden">Username</span></label>
@@ -27,7 +29,7 @@
     </div>
 
     <div class="form__field">
-      <input type="submit" value="Sign In">
+      <input type="submit" name="signin" value="Sign In">
     </div>
 
   </form>

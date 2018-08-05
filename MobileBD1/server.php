@@ -52,9 +52,10 @@
 
 		if(!empty($username) && !empty($email) && !empty($mobile) && !empty($address) && !empty($password) && !empty($Cpassword))
 		{
-			$password= $Cpassword;
-			$sql = "INSERT INTO customer (UserName,Email,Phone,Address,Password,ConfirmPassword)
-					VALUES ('$username','$email','$mobile','$address','password','Cpassword')";
+			//$password= $Cpassword;
+			$password= md5($password);
+			$sql = "INSERT INTO customer (Username,Email,Phone_no,Address,Password)
+					VALUES ('$username','$email','$mobile','$address','$password')";
 			$result = mysqli_query($db,$sql);
 
 			if($result!=null)
@@ -67,4 +68,47 @@
 		}
 	}
 
+?>
+
+
+<?php
+
+	//$username="";
+	//$password="";
+	//$usernameErr = $emailErr = $password1Err = $password2Err = $dateErr= $matchErr = "";
+
+	
+	//$db=mysqli_connect('localhost','root','','mobilebd');
+
+if(isset($_POST["signin"])){  
+  
+if(!empty($_POST['username']) && !empty($_POST['password'])) {  
+    $username=$_POST['username'];  
+    $password=md5($_POST['password']);  
+  
+    $con=mysqli_connect('localhost','root','','mobilebd'); 
+    $sql="SELECT * FROM customer WHERE Username='".$username."' AND Password='".$password."'"; 
+    $result = $con->query($sql); 
+
+
+    	
+
+		$row=$result->fetch_assoc();
+
+	    $dbusername=$row['Username'];  
+	    $dbpassword=$row['Password'];
+
+	    print_r($row);
+	    echo "<script>Hello</script>";
+
+	    if($username == $dbusername && $password == $dbpassword)  
+	    {
+	    	echo "string1".$dbusername;
+	    	header("location: allProduct.php");  
+	    }  
+	    } else {
+	    	echo "string11".$dbusername;
+	    	echo "Invalid username or password!";  
+	    }
+}  
 ?>
