@@ -7,6 +7,6 @@
 		<?php
 		  require 'header.php';
 		?>
-		<p>You are user</p>
+		<p>You are Admin</p>
 </body>
 </html>

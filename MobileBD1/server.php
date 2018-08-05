@@ -54,14 +54,14 @@
 		{
 			//$password= $Cpassword;
 			$password= md5($password);
-			$sql = "INSERT INTO customer (Username,Email,Phone_no,Address,Password)
-					VALUES ('$username','$email','$mobile','$address','$password')";
+			$sql = "INSERT INTO customer (Username,Email,Phone_no,Address,Password,User_Type)
+					VALUES ('$username','$email','$mobile','$address','$password','Customer')";
 			$result = mysqli_query($db,$sql);
 
 			if($result!=null)
 			{
-				echo "<script>alert('Registration sucessful...');</script>";
-				//(header("location: login.php"));			
+				echo "<script>alert('Registration successful...Go to login and signup');</script>";
+				header("location: login.php");			
 			}else{
 				$failedErr = "Error: " . $db->error;
 			}
@@ -72,13 +72,6 @@
 
 
 <?php
-
-	//$username="";
-	//$password="";
-	//$usernameErr = $emailErr = $password1Err = $password2Err = $dateErr= $matchErr = "";
-
-	
-	//$db=mysqli_connect('localhost','root','','mobilebd');
 
 if(isset($_POST["signin"])){  
   
@@ -97,15 +90,22 @@ if(!empty($_POST['username']) && !empty($_POST['password'])) {
 
 	    $dbusername=$row['Username'];  
 	    $dbpassword=$row['Password'];
+	    $dbUserType=$row['User_Type'];
 
 	    print_r($row);
 	    echo "<script>Hello</script>";
 
-	    if($username == $dbusername && $password == $dbpassword)  
+	    if($username == $dbusername && $password == $dbpassword && $dbUserType=='Customer')  
 	    {
 	    	echo "string1".$dbusername;
 	    	header("location: allProduct.php");  
 	    }  
+
+	    if($username == $dbusername && $password == $dbpassword && $dbUserType=='Admin')  
+	    {
+	    	echo "string1".$dbusername;
+	    	header("location: AdminHome.php");  
+	    }
 	    } else {
 	    	echo "string11".$dbusername;
 	    	echo "Invalid username or password!";  
