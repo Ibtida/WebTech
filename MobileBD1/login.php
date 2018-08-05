@@ -5,7 +5,12 @@
   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
-<body  class="align">
+<body  class="">
+
+<?php
+  require 'header.php';
+?>
+
 <div class="grid">
 <div class="text-center pad10"><h1>Login</h1></div>
 
