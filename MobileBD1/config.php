@@ -5,7 +5,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname="summernote";
+$dbname="mobilebd";
 
 
 $conn = mysqli_connect($servername, $username, $password,$dbname);

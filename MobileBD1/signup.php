@@ -1,3 +1,5 @@
+
+ <?php require 'server.php'; ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +15,7 @@
 <div class="grid">
 <div class="text-center pad10"><h1>SignUp</h1></div>
 
-  <form action="https://httpbin.org/post" method="POST" class="form login">
+  <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" class="form login">
 
     <div class="form__field">
       <label for="signup__username"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#user"></use></svg><span class="hidden">Username</span></label>
@@ -29,6 +31,7 @@
       <label for="signup__mobile"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#mobile"></use></svg><span class="hidden">MobileNo</span></label>
       <input id="signup__mobile" type="text" name="mobile" class="form__input" placeholder="Mobile" required>
     </div>
+
 
     <div class="form__field">
       <label for="signup__address"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#address"></use></svg><span class="hidden">Address</span></label>
@@ -46,7 +49,7 @@
     </div>
 
     <div class="form__field">
-      <input type="submit" value="Sign Up">
+      <input type="submit" name="submitted" value="Sign Up">
     </div>
 
   </form>
