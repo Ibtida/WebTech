@@ -31,6 +31,11 @@
     </div>
 
     <div class="form__field">
+      <label for="signup__address"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#address"></use></svg><span class="hidden">Address</span></label>
+      <input id="signup__Address" type="text" name="address" class="form__input" placeholder="Address" required>
+    </div>
+
+    <div class="form__field">
       <label for="signup__password"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lock"></use></svg><span class="hidden">Password</span></label>
       <input id="signup__password" type="password" name="password" class="form__input" placeholder="Password" required>
     </div>

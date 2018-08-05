@@ -30,11 +30,11 @@
                       </li>
                       <li class="upper-links dropdown"><a class="links" href="http://clashhacks.in/">All Brand</a>
                           <ul class="dropdown-menu">
-                              <li class="profile-li"><a class="profile-links" href="http://yazilife.com/">APPLE</a></li>
-                              <li class="profile-li"><a class="profile-links" href="http://hacksociety.tech/">ONEPLUS</a></li>
-                              <li class="profile-li"><a class="profile-links" href="http://clashhacks.in/">SAMSUNG</a></li>
-                              <li class="profile-li"><a class="profile-links" href="http://clashhacks.in/">HUAWEI</a></li>
-                              <li class="profile-li"><a class="profile-links" href="http://clashhacks.in/">XIAOMI</a></li>
+                              <li class="profile-li"><a class="profile-links" href="header.php">APPLE</a></li>
+                              <li class="profile-li"><a class="profile-links" href="header.php">ONEPLUS</a></li>
+                              <li class="profile-li"><a class="profile-links" href="header.php">SAMSUNG</a></li>
+                              <li class="profile-li"><a class="profile-links" href="header.php">HUAWEI</a></li>
+                              <li class="profile-li"><a class="profile-links" href="header.php">XIAOMI</a></li>
                           </ul>
                       </li>
                   </ul>
