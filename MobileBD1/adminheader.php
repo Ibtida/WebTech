@@ -16,12 +16,12 @@
           <div class="container">
               <div class="row row1">
                   <ul class="largenav pull-right">
-                      <li class="upper-links"><a class="links" href="index.php">Home</a></li>
-                      <li class="upper-links"><a class="links" href="https://campusbox.org/">About Us</a></li>
-                      <li class="upper-links"><a class="links" href="http://clashhacks.in/">Contact Us</a></li>
-                      <li class="upper-links"><a class="links" href="http://clashhacks.in/">Add Product</a></li>
-                      <li class="upper-links"><a class="links" href="http://clashhacks.in/">Delete User</a></li>
-                      <li class="upper-links"><a class="links" href="login.php">Login</a></li>
+                      <li class="upper-links"><a class="links" href="AdminHome.php">Home</a></li>
+                      <li class="upper-links"><a class="links" href="AdminHome.php">About Us</a></li>
+                      <li class="upper-links"><a class="links" href="AdminHome.php">Contact Us</a></li>
+                      <li class="upper-links"><a class="links" href="addproduct.php">Add Product</a></li>
+                      <li class="upper-links"><a class="links" href="AdminHome.php">Delete User</a></li>
+                      <li class="upper-links"><a class="links" href="index.php">Logout</a></li>
                       
                       <li class="upper-links">
                           <a class="links" href="http://clashhacks.in/">
@@ -78,5 +78,3 @@
           <a href="http://clashhacks.in/">Link</a>
       </div>
     </header>
-</body>
-</html>

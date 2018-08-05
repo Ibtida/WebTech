@@ -18,33 +18,33 @@
   <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" class="form login">
 
     <div class="form__field">
-      <label for="signup__username"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#user"></use></svg><span class="hidden">Username</span></label>
+      <label for="signup__username"><span class="glyphicon glyphicon-user" aria-hidden="true"></span><span class="hidden">Username</span></label>
       <input id="signup__username" type="text" name="username" class="form__input" placeholder="Username" required>
     </div>
 
     <div class="form__field">
-      <label for="signup__email"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#email"></use></svg><span class="hidden">Email</span></label>
+      <label for="signup__email"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span><span class="hidden">Email</span></label>
       <input id="signup__email" type="text" name="email" class="form__input" placeholder="Email" required>
     </div>
 
     <div class="form__field">
-      <label for="signup__mobile"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#mobile"></use></svg><span class="hidden">MobileNo</span></label>
+      <label for="signup__mobile"><span class="glyphicon glyphicon-phone" aria-hidden="true"></span><span class="hidden">MobileNo</span></label>
       <input id="signup__mobile" type="text" name="mobile" class="form__input" placeholder="Mobile" required>
     </div>
 
 
     <div class="form__field">
-      <label for="signup__address"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#address"></use></svg><span class="hidden">Address</span></label>
+      <label for="signup__address"><span class="glyphicon glyphicon-home" aria-hidden="true"></span><span class="hidden">Address</span></label>
       <input id="signup__Address" type="text" name="address" class="form__input" placeholder="Address" required>
     </div>
 
     <div class="form__field">
-      <label for="signup__password"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lock"></use></svg><span class="hidden">Password</span></label>
+      <label for="signup__password"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span><span class="hidden">Password</span></label>
       <input id="signup__password" type="password" name="password" class="form__input" placeholder="Password" required>
     </div>
 
     <div class="form__field">
-      <label for="signup__Cpassword"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lock"></use></svg><span class="hidden">CPassword</span></label>
+      <label for="signup__Cpassword"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span><span class="hidden">CPassword</span></label>
       <input id="signup__Cpassword" type="password" name="Cpassword" class="form__input" placeholder="Confirm Password" required>
     </div>
 
