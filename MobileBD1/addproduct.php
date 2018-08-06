@@ -15,7 +15,7 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
-<h2 ALIGN="CENTER">Registration form</h2>
+<h2 ALIGN="CENTER">ADD PRODUCT</h2>
 
 	<div class="row">
 		<div class="col-md-4"></div>
@@ -30,6 +30,16 @@
 			  <div class="form__field">
 			    <label for="signup__email"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span><span class="hidden">Email</span></label>
 			    <input id="signup__email" type="text" name="email" class="form__input" placeholder="Email" required>
+			  </div>
+
+			  <div class="form__field">
+			  	<label for="signup__Brand"><span class="glyphicon glyphicon-phone"></span><span class="hidden">Brand</span></label>
+			  	<select id="signup__Image" name="brand" class="form__input" required style="background-color: var(--loginInputBackgroundColor);border:none;">
+			  	    <option value="volvo">Volvo</option>
+			  	    <option value="saab">Saab</option>
+			  	    <option value="fiat">Fiat</option>
+			  	    <option value="audi">Audi</option>
+			  	  </select>
 			  </div>
 
 			  <div class="form__field">
@@ -54,7 +64,7 @@
 			  </div>
 
 			  <div class="form__field">
-			    <label for="signup__Image"><span class="glyphicon glyphicon-file" aria-hidden="true"></span><span class="hidden">Image</span></label>
+			    <label for="signup__Image"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span><span class="hidden">Image</span></label>
 			    <input id="signup__Image" type="file" name="file" class="form__input" placeholder="Mobile Image" required>
 			  </div>
 

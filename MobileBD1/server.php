@@ -103,11 +103,9 @@ if(!empty($_POST['username']) && !empty($_POST['password'])) {
 
 	    if($username == $dbusername && $password == $dbpassword && $dbUserType=='Admin')  
 	    {
-	    	echo "string1".$dbusername;
 	    	header("location: AdminHome.php");  
 	    }
 	    } else {
-	    	echo "string11".$dbusername;
 	    	echo "Invalid username or password!";  
 	    }
 }  
