@@ -1,3 +1,6 @@
+
+
+
 <?php
 
 	
@@ -71,42 +74,7 @@
 ?>
 
 
-<?php
-
-if(isset($_POST["signin"])){  
-  
-if(!empty($_POST['username']) && !empty($_POST['password'])) {  
-    $username=$_POST['username'];  
-    $password=md5($_POST['password']);  
-  
-    $con=mysqli_connect('localhost','root','','mobilebd'); 
-    $sql="SELECT * FROM customer WHERE Username='".$username."' AND Password='".$password."'"; 
-    $result = $con->query($sql); 
 
 
-    	
 
-		$row=$result->fetch_assoc();
 
-	    $dbusername=$row['Username'];  
-	    $dbpassword=$row['Password'];
-	    $dbUserType=$row['User_Type'];
-
-	    print_r($row);
-	    echo "<script>Hello</script>";
-
-	    if($username == $dbusername && $password == $dbpassword && $dbUserType=='Customer')  
-	    {
-	    	echo "string1".$dbusername;
-	    	header("location: allProduct.php");  
-	    }  
-
-	    if($username == $dbusername && $password == $dbpassword && $dbUserType=='Admin')  
-	    {
-	    	header("location: AdminHome.php");  
-	    }
-	    } else {
-	    	echo "Invalid username or password!";  
-	    }
-}  
-?>

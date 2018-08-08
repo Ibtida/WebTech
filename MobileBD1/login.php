@@ -1,3 +1,45 @@
+<?php
+
+if(isset($_POST["signin"])){  
+  
+if(!empty($_POST['username']) && !empty($_POST['password'])) {  
+    $username=$_POST['username'];  
+    $password=md5($_POST['password']);  
+  
+    $con=mysqli_connect('localhost','root','','mobilebd'); 
+    $sql="SELECT * FROM customer WHERE Username='".$username."' AND Password='".$password."'"; 
+    $result = $con->query($sql); 
+
+
+      
+
+    $row=$result->fetch_assoc();
+
+      $dbusername=$row['Username'];  
+      $dbpassword=$row['Password'];
+      $dbUserType=$row['User_Type'];
+
+      print_r($row);
+      echo "<script>Hello</script>";
+
+      if($username == $dbusername && $password == $dbpassword && $dbUserType=='Customer')  
+      {
+        echo "string1".$dbusername;
+        header("location: index.php");  
+      }  
+
+      else if($username == $dbusername && $password == $dbpassword && $dbUserType=='Admin')  
+      {
+        header("location: AdminHome.php");  
+      }
+      } else {
+        echo "Invalid username or password!";  
+      }
+}  
+?>
+
+
+
 
 <!DOCTYPE html>
 <html>
@@ -27,22 +69,14 @@
                }
           
           if (!status) {
-            window.alert("Please Fix the Error")
+            window.alert("Please Fix the Error");
           }
           if(status)
           {
-            $.ajax({
-              url: "loginValidation.php",
-              method: "post",
-              data: $('form').serialize(),
-              datatype: "text",
-              success: function(Result)
-              {
-                //$('#message').text(Result)
-                window.alert("Successful");
-                window.location.href = "AdminHome.php";
-              }
-            })
+            window.alert("success");
+            document.getElementById("form").submit();
+
+
           }
       }
     </script>
@@ -58,7 +92,7 @@
 <div class="grid">
 <div class="text-center pad10"><h1>Login</h1></div>
 
-  <form method="post" onsubmit = "validateForm()" name="form" class="form login">
+  <form id="form" method="post"  onsubmit = "validateForm()" name="form" class="form login">
 
     <div class="form__field">
       <label for="login__username"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#user"></use></svg><span class="hidden">Username</span></label>
@@ -73,7 +107,7 @@
     </div>
 
     <div class="form__field">
-      <input type="button" value="Login" align="right" id="login" class="btn btn-default" onclick="validateForm()"> <input type="reset" value="Clear" class="btn btn-warning">
+      <input type="button" value="Login" align="right" id="login" class="btn btn-default" name="signin" onclick="validateForm()" > <input type="reset" value="Clear" class="btn btn-warning">
     </div>
 
   </form>
