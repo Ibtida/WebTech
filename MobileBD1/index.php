@@ -74,7 +74,7 @@
 <?php
 require 'config.php';
 
-$sql = "SELECT * FROM product1";
+$sql = "SELECT * FROM product1 order by Product_id desc limit 6";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) { ?>
@@ -99,8 +99,8 @@ if ($result->num_rows > 0) { ?>
                 
                 <div class="item col-xs-4 col-lg-4">
                     <div class="thumbnail card">
-                        <div class="img-event">
-                            <img class="group list-group-image img-fluid" src=<?php echo $row['Image']; ?> alt="" />
+                        <div class="img-event" style="border:3px solid #6f6868">
+                            <img class="group list-group-image img-fluid" src=<?=$row['Image']?> alt="" />
                         </div>
                         <div class="caption card-body">
                             <h4 class="group card-title inner list-group-item-heading">
@@ -113,7 +113,7 @@ if ($result->num_rows > 0) { ?>
                                         <?php echo $row['Price']; ?></p>
                                 </div>
                                 <div class="col-xs-12 col-md-6">
-                                    <a class="btn btn-success" href="http://www.jquery2dotnet.com">Buy</a>
+                                    <a class="btn btn-success" href=<?="details.php?Product_id=".$row['Product_id']?>>Buy</a>
                                 </div>
                             </div>
                         </div>

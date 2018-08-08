@@ -600,3 +600,9 @@ label{
 
 /*add product*/
 
+
+.login input[type='submit'],.login input[type='submit']:hover
+{
+  background-color: #10191f;
+  color: #fff;
+}

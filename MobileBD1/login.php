@@ -70,13 +70,13 @@ if(!empty($_POST['username']) && !empty($_POST['password'])) {
           
           if (!status) {
             window.alert("Please Fix the Error");
+            return false;
           }
           if(status)
           {
             window.alert("success");
-            document.getElementById("form").submit();
-
-
+            // document.getElementById("form").submit();
+            return true;
           }
       }
     </script>
@@ -92,7 +92,7 @@ if(!empty($_POST['username']) && !empty($_POST['password'])) {
 <div class="grid">
 <div class="text-center pad10"><h1>Login</h1></div>
 
-  <form id="form" method="post"  onsubmit = "validateForm()" name="form" class="form login">
+  <form id="form" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" onsubmit = "return validateForm()" name="form" class="form login">
 
     <div class="form__field">
       <label for="login__username"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#user"></use></svg><span class="hidden">Username</span></label>
@@ -107,7 +107,7 @@ if(!empty($_POST['username']) && !empty($_POST['password'])) {
     </div>
 
     <div class="form__field">
-      <input type="button" value="Login" align="right" id="login" class="btn btn-default" name="signin" onclick="validateForm()" > <input type="reset" value="Clear" class="btn btn-warning">
+      <input type="submit" value="Login" align="right" id="login" class="btn btn-default" name="signin" style="background: ##333" > <input type="reset" value="Clear" class="btn btn-default">
     </div>
 
   </form>

@@ -28,9 +28,11 @@
 		{
 			$path_info = pathinfo($_FILES['imagefile']['name']);
 			$extention =$path_info['extension']; // "bill"
-
+			$fileName=$brand.$ProductName.'.'.$extention;
+			$fileName= str_replace (" ", "-", $fileName);
+			
 			$path="productimage/";
-			$path = $path.basename($brand.' '.$ProductName.'.'.$extention);
+			$path = $path.basename($fileName);
 			move_uploaded_file($_FILES['imagefile']['tmp_name'], $path);
 			//$password= $Cpassword;
 			//$password= md5($password);d
