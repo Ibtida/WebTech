@@ -77,169 +77,57 @@ require 'config.php';
 $sql = "SELECT * FROM product1";
 $result = $conn->query($sql);
 
-if ($result->num_rows > 0) {
+if ($result->num_rows > 0) { ?>
+
+<div class="container">
+    <div id="products" class="row view-group">
+
+<?php
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        echo "<br> id: ". $row["Product_id"]. " -- Name: ". $row["Product_Name"]. "--Price " . $row["Price"] ." -- Details: ". $row["Details"]." -- image: ". $row["Image"]. "<br>";
+        // echo "<br> id: ". $row["Product_id"]. " -- Name: ". $row["Product_Name"]. "--Price " . $row["Price"] ." -- Details: ". $row["Details"]." -- image: ". $row["Image"]. "<br>";
 
-        $dbimage=$row['Image'];  
-        $dbproductname=$row["Product_Name"];
-      //$dbpassword=$row['Product_Name'];
-      //echo ".$dbusername <br>";
-      //echo "$dbpassword";
+        // $dbimage=$row['Image'];  
+        // $dbproductname=$row["Product_Name"];
 
-    }
+?>
+
+<!-- Product Grid View -->
+
+
+
+                
+                <div class="item col-xs-4 col-lg-4">
+                    <div class="thumbnail card">
+                        <div class="img-event">
+                            <img class="group list-group-image img-fluid" src=<?php echo $row['Image']; ?> alt="" />
+                        </div>
+                        <div class="caption card-body">
+                            <h4 class="group card-title inner list-group-item-heading">
+                                <?php echo $row['Product_Name']; ?></h4>
+                            <p class="group inner list-group-item-text">
+                                <?php echo $row['Details']; ?></p>
+                            <div class="row">
+                                <div class="col-xs-12 col-md-6">
+                                    <p class="lead">
+                                        <?php echo $row['Price']; ?></p>
+                                </div>
+                                <div class="col-xs-12 col-md-6">
+                                    <a class="btn btn-success" href="http://www.jquery2dotnet.com">Buy</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <?php
+                    }
 } else {
     echo "0 results";
 }
 
 $conn->close();
 ?> 
-
-<!-- Product Grid View -->
-
-
-<div class="container">
-    <div id="products" class="row view-group">
-                <div class="item col-xs-4 col-lg-4">
-                    <div class="thumbnail card">
-                        <div class="img-event">
-                            <img class="group list-group-image img-fluid" src="$dbimage" alt="" />
-                        </div>
-                        <div class="caption card-body">
-                            <h4 class="group card-title inner list-group-item-heading">
-                                Product title</h4>
-                            <p class="group inner list-group-item-text">
-                                Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                                sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                            <div class="row">
-                                <div class="col-xs-12 col-md-6">
-                                    <p class="lead">
-                                        $21.000</p>
-                                </div>
-                                <div class="col-xs-12 col-md-6">
-                                    <a class="btn btn-success" href="http://www.jquery2dotnet.com">Buy</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item col-xs-4 col-lg-4">
-                    <div class="thumbnail card">
-                        <div class="img-event">
-                            <img class="group list-group-image img-fluid" src="http://placehold.it/400x250/000/fff" alt="" />
-                        </div>
-                        <div class="caption card-body">
-                            <h4 class="group card-title inner list-group-item-heading">
-                                Product title</h4>
-                            <p class="group inner list-group-item-text">
-                                Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                                sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                            <div class="row">
-                                <div class="col-xs-12 col-md-6">
-                                    <p class="lead">
-                                        $21.000</p>
-                                </div>
-                                <div class="col-xs-12 col-md-6">
-                                    <a class="btn btn-success" href="http://www.jquery2dotnet.com">Buy</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item col-xs-4 col-lg-4">
-                    <div class="thumbnail card">
-                        <div class="img-event">
-                            <img class="group list-group-image img-fluid" src="http://placehold.it/400x250/000/fff" alt="" />
-                        </div>
-                        <div class="caption card-body">
-                            <h4 class="group card-title inner list-group-item-heading">
-                                Product title</h4>
-                            <p class="group inner list-group-item-text">
-                                Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                                sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                            <div class="row">
-                                <div class="col-xs-12 col-md-6">
-                                    <p class="lead">
-                                        $21.000</p>
-                                </div>
-                                <div class="col-xs-12 col-md-6">
-                                    <a class="btn btn-success" href="http://www.jquery2dotnet.com">Buy</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item col-xs-4 col-lg-4">
-                    <div class="thumbnail card">
-                        <div class="img-event">
-                            <img class="group list-group-image img-fluid" src="http://placehold.it/400x250/000/fff" alt="" />
-                        </div>
-                        <div class="caption card-body">
-                            <h4 class="group card-title inner list-group-item-heading">
-                                Product title</h4>
-                            <p class="group inner list-group-item-text">
-                                Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                                sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                            <div class="row">
-                                <div class="col-xs-12 col-md-6">
-                                    <p class="lead">
-                                        $21.000</p>
-                                </div>
-                                <div class="col-xs-12 col-md-6">
-                                    <a class="btn btn-success" href="http://www.jquery2dotnet.com">Buy</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item col-xs-4 col-lg-4">
-                    <div class="thumbnail card">
-                        <div class="img-event">
-                            <img class="group list-group-image img-fluid" src="http://placehold.it/400x250/000/fff" alt="" />
-                        </div>
-                        <div class="caption card-body">
-                            <h4 class="group card-title inner list-group-item-heading">
-                                Product title</h4>
-                            <p class="group inner list-group-item-text">
-                                Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                                sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                            <div class="row">
-                                <div class="col-xs-12 col-md-6">
-                                    <p class="lead">
-                                        $21.000</p>
-                                </div>
-                                <div class="col-xs-12 col-md-6">
-                                    <a class="btn btn-success" href="http://www.jquery2dotnet.com">Buy</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item col-xs-4 col-lg-4">
-                    <div class="thumbnail card">
-                        <div class="img-event">
-                            <img class="group list-group-image img-fluid" src="http://placehold.it/400x250/000/fff" alt="" />
-                        </div>
-                        <div class="caption card-body">
-                            <h4 class="group card-title inner list-group-item-heading">
-                                Product title</h4>
-                            <p class="group inner list-group-item-text">
-                                Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                                sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                            <div class="row">
-                                <div class="col-xs-12 col-md-6">
-                                    <p class="lead">
-                                        $21.000</p>
-                                </div>
-                                <div class="col-xs-12 col-md-6">
-                                    <a class="btn btn-success" href="http://www.jquery2dotnet.com">Buy</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 </div>
 
 <!-- footer View -->
