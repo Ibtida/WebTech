@@ -71,7 +71,29 @@
 
 
 <!--sql-->
+<?php
+require 'config.php';
 
+$sql = "SELECT Product_id, Product_Name, Price FROM product1";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        echo "<br> id: ". $row["Product_id"]. " - Name: ". $row["Product_Name"]. "-Price " . $row["Price"] . "<br>";
+
+        /*$dbusername=$row['Price'];  
+      $dbpassword=$row['Product_Name'];
+      echo ".$dbusername <br>";
+      echo "$dbpassword";*/
+
+    }
+} else {
+    echo "0 results";
+}
+
+$conn->close();
+?> 
 
 <!-- Product Grid View -->
 
