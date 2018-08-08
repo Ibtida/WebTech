@@ -113,7 +113,7 @@ if ($result->num_rows > 0) { ?>
                                         <?php echo $row['Price']; ?></p>
                                 </div>
                                 <div class="col-xs-12 col-md-6">
-                                    <a class="btn btn-success" href=<?="details.php?Product_id=".$row['Product_id']?>>Buy</a>
+                                    <a class="btn btn-success" href=<?="buyDetails.php?Product_id=".$row['Product_id']?>>Buy</a>
                                 </div>
                             </div>
                         </div>
