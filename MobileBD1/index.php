@@ -74,18 +74,19 @@
 <?php
 require 'config.php';
 
-$sql = "SELECT Product_id, Product_Name, Price FROM product1";
+$sql = "SELECT * FROM product1";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        echo "<br> id: ". $row["Product_id"]. " - Name: ". $row["Product_Name"]. "-Price " . $row["Price"] . "<br>";
+        echo "<br> id: ". $row["Product_id"]. " -- Name: ". $row["Product_Name"]. "--Price " . $row["Price"] ." -- Details: ". $row["Details"]." -- image: ". $row["Image"]. "<br>";
 
-        /*$dbusername=$row['Price'];  
-      $dbpassword=$row['Product_Name'];
-      echo ".$dbusername <br>";
-      echo "$dbpassword";*/
+        $dbimage=$row['Image'];  
+        $dbproductname=$row["Product_Name"];
+      //$dbpassword=$row['Product_Name'];
+      //echo ".$dbusername <br>";
+      //echo "$dbpassword";
 
     }
 } else {
@@ -103,7 +104,7 @@ $conn->close();
                 <div class="item col-xs-4 col-lg-4">
                     <div class="thumbnail card">
                         <div class="img-event">
-                            <img class="group list-group-image img-fluid" src="images/image1.jpg" alt="" />
+                            <img class="group list-group-image img-fluid" src="$dbimage" alt="" />
                         </div>
                         <div class="caption card-body">
                             <h4 class="group card-title inner list-group-item-heading">
@@ -117,7 +118,7 @@ $conn->close();
                                         $21.000</p>
                                 </div>
                                 <div class="col-xs-12 col-md-6">
-                                    <a class="btn btn-success" href="http://www.jquery2dotnet.com">Add to cart</a>
+                                    <a class="btn btn-success" href="http://www.jquery2dotnet.com">Buy</a>
                                 </div>
                             </div>
                         </div>
@@ -140,7 +141,7 @@ $conn->close();
                                         $21.000</p>
                                 </div>
                                 <div class="col-xs-12 col-md-6">
-                                    <a class="btn btn-success" href="http://www.jquery2dotnet.com">Add to cart</a>
+                                    <a class="btn btn-success" href="http://www.jquery2dotnet.com">Buy</a>
                                 </div>
                             </div>
                         </div>
@@ -163,7 +164,7 @@ $conn->close();
                                         $21.000</p>
                                 </div>
                                 <div class="col-xs-12 col-md-6">
-                                    <a class="btn btn-success" href="http://www.jquery2dotnet.com">Add to cart</a>
+                                    <a class="btn btn-success" href="http://www.jquery2dotnet.com">Buy</a>
                                 </div>
                             </div>
                         </div>
@@ -186,7 +187,7 @@ $conn->close();
                                         $21.000</p>
                                 </div>
                                 <div class="col-xs-12 col-md-6">
-                                    <a class="btn btn-success" href="http://www.jquery2dotnet.com">Add to cart</a>
+                                    <a class="btn btn-success" href="http://www.jquery2dotnet.com">Buy</a>
                                 </div>
                             </div>
                         </div>
@@ -209,7 +210,7 @@ $conn->close();
                                         $21.000</p>
                                 </div>
                                 <div class="col-xs-12 col-md-6">
-                                    <a class="btn btn-success" href="http://www.jquery2dotnet.com">Add to cart</a>
+                                    <a class="btn btn-success" href="http://www.jquery2dotnet.com">Buy</a>
                                 </div>
                             </div>
                         </div>
@@ -232,7 +233,7 @@ $conn->close();
                                         $21.000</p>
                                 </div>
                                 <div class="col-xs-12 col-md-6">
-                                    <a class="btn btn-success" href="http://www.jquery2dotnet.com">Add to cart</a>
+                                    <a class="btn btn-success" href="http://www.jquery2dotnet.com">Buy</a>
                                 </div>
                             </div>
                         </div>
