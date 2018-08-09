@@ -30,7 +30,7 @@
 			$extention =$path_info['extension']; // "bill"
 			$fileName=$brand.$ProductName.'.'.$extention;
 			$fileName= str_replace (" ", "-", $fileName);
-			
+
 			$path="productimage/";
 			$path = $path.basename($fileName);
 			move_uploaded_file($_FILES['imagefile']['tmp_name'], $path);
