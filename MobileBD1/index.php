@@ -77,58 +77,62 @@ require 'config.php';
 $sql = "SELECT * FROM product1 order by Product_id desc limit 6";
 $result = $conn->query($sql);
 
-if ($result->num_rows > 0) { ?>
+if ($result->num_rows > 0) 
+    { ?>
 
 <div class="container">
     <div id="products" class="row view-group">
 
-<?php
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-        // echo "<br> id: ". $row["Product_id"]. " -- Name: ". $row["Product_Name"]. "--Price " . $row["Price"] ." -- Details: ". $row["Details"]." -- image: ". $row["Image"]. "<br>";
+            <?php
+                // output data of each row
+                while($row = $result->fetch_assoc()) 
+                {
+                    // echo "<br> id: ". $row["Product_id"]. " -- Name: ". $row["Product_Name"]. "--Price " . $row["Price"] ." -- Details: ". $row["Details"]." -- image: ". $row["Image"]. "<br>";
 
-        // $dbimage=$row['Image'];  
-        // $dbproductname=$row["Product_Name"];
+                    // $dbimage=$row['Image'];  
+                    // $dbproductname=$row["Product_Name"];
 
-?>
+            ?>
 
 <!-- Product Grid View -->
 
 
 
                 
-                <div class="item col-xs-4 col-lg-4">
-                    <div class="thumbnail card">
-                        <div class="img-event" style="border:3px solid #6f6868">
-                            <img class="group list-group-image img-fluid" src=<?=$row['Image']?> alt="" />
-                        </div>
-                        <div class="caption card-body">
-                            <h4 class="group card-title inner list-group-item-heading">
-                                <?php echo $row['Product_Name']; ?></h4>
-                            <p class="group inner list-group-item-text">
-                                <?php echo $row['Details']; ?></p>
-                            <div class="row">
-                                <div class="col-xs-12 col-md-6">
-                                    <p class="lead">
-                                        <?php echo $row['Price']; ?></p>
+                        <div class="item col-xs-4 col-lg-4">
+                            <div class="thumbnail card">
+                                <div class="img-event" style="border:3px solid #6f6868">
+                                    <img class="group list-group-image img-fluid" src=<?=$row['Image']?> alt="" />
                                 </div>
-                                <div class="col-xs-12 col-md-6">
-                                    <a class="btn btn-success" href=<?="buyDetails.php?Product_id=".$row['Product_id']?>>Buy</a>
+                                <div class="caption card-body">
+                                    <h4 class="group card-title inner list-group-item-heading">
+                                        <?php echo $row['Product_Name']; ?></h4>
+                                    <p class="group inner list-group-item-text">
+                                        <?php echo $row['Details']; ?></p>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-6">
+                                            <p class="lead">
+                                                <?php echo $row['Price']; ?></p>
+                                        </div>
+                                        <div class="col-xs-12 col-md-6">
+                                            <a class="btn btn-success" href=<?="buyDetails.php?Product_id=".$row['Product_id']?>>Buy</a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
 
-                <?php
+                        <?php
+                }
+                    } 
+                    else
+                     {
+                        echo "0 results";
                     }
-} else {
-    echo "0 results";
-}
 
-$conn->close();
-?> 
-</div>
+                    $conn->close();
+                    ?> 
+        </div>
 
 <!-- footer View -->
 

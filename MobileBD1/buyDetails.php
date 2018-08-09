@@ -27,12 +27,14 @@
 	if($_SERVER['REQUEST_METHOD'] == "POST")
 	{
 		$brand= $row['Brand'];
+		$Product_id= $row['Product_id'];
 		$ProductName= $row['Product_Name'];
 		$Price= $row['Price'];
 		$color= $_REQUEST['color'];
 		$storage= $_REQUEST['storage'];
 		$quantity= $_REQUEST['quantity'];
 		$stock=$row['Stock'];
+		$Price1=$Price*$quantity;
 
 		//echo "$color--$storage";
 		/*if($quantity >= $stock)
@@ -47,17 +49,22 @@
 			//$password= md5($password);d
 
 			// INSERT INTO `product1`(`Product_id`, `Brand`, `Product_Name`, `Price`, `Stock`, `Details`) VALUES ([value-1],[value-2],[value-3],[value-4],[value-5],[value-6])
-			$sql1 = "INSERT INTO order1 (Brand,Product_Name,Price,Color,Storage,Quantity)
-					VALUES ('$brand','$ProductName','$Price','$color','$storage','$quantity')";
+			$sql1 = "INSERT INTO order1 (Brand,Product_Name,Price,Color,Storage,Quantity,Payment)
+					VALUES ('$brand','$ProductName','$Price1','$color','$storage','$quantity','unpaid')";
 
 			$result1 = mysqli_query($db,$sql1);
-
 			
 			if($result1)
 			{
+				$sql2="SELECT order_id from order1 ORDER by order_id desc limit 1";
+			    $result2 = $conn->query($sql2); 
+				$row2=$result2->fetch_assoc();
+				$order_id=$row2['order_id'];
+
 				echo "<script>alert('Product ordered successfully');</script>";
-				//header("location: index.php");		
-			}else{
+				header("location: paymentMethod.php?Product_id=$Product_id&&Price=$Price&&quantity=$quantity&&order_id=$order_id");	
+			}
+			else{
 				$failedErr = "Error: " . $db->error;
 			}
 
@@ -74,7 +81,6 @@
 
 
 
-
 <!DOCTYPE html>
 <html>
 	<head>
@@ -84,9 +90,9 @@
 	</head>
 
     <body>
-       <form method="Post" class="form buy" id="formbuy" enctype="multipart/form-data">
+       <form method="POST"  class="form buy" id="formbuy" enctype="multipart/form-data">
         <div class="container">
-
+                                                                                                                                                     
         	<div class="row">
                			<div class="col-xs-4 item-photo">
                
@@ -101,7 +107,9 @@
 		                    <!-- Precios -->
 		                    <h6 class="title-price"><small>MobileBD</small></h6>
 		                    <h3 name="price" style="margin-top:0px;"><?php echo $row['Price']; ?></h3>
-		        
+		        			
+		        			<input type="hidden" name="Product_id" value="<?php echo $row['Product_id']; ?>">
+		        			<input type="hidden" name="Price" value="<?php echo $row['Price']; ?>">
 		                    <!-- Detalles especificos del producto -->
 		                    <div class="section">
 		                        <h6 class="title-attr" style="margin-top:15px;" ><small>COLOR</small></h6>                    
@@ -138,7 +146,8 @@
 		        
 		                    <div class="section" style="padding-bottom:20px;">
 		                        
-		                        <input type="submit" name="Buy" value="Buy Now">
+		                        <input type="submit" name="Buy"  value="Buy Now">
+		                        
 		                     </div>
 
 		                     <div class="section" style="padding-bottom:20px;">
