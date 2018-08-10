@@ -46,7 +46,7 @@
 			if($result)
 			{
 				echo "<script>alert('New Product added');</script>";
-				header("location: AdminHome.php");		
+				header("location: AdminAllProduct.php");		
 			}else{
 				$failedErr = "Error: " . $db->error;
 			}

@@ -16,7 +16,8 @@
           <div class="container">
               <div class="row row1">
                   <ul class="largenav pull-right">
-                      <li class="upper-links"><a class="links" href="AdminHome.php">Home</a></li>
+                      <li class="upper-links"><a class="links" href="AdminAllProduct.php">Home</a></li>
+                      <li class="upper-links"><a class="links" href="AdminAllOrder.php">All Order</a></li>
                       <li class="upper-links"><a class="links" href="AdminHome.php">About Us</a></li>
                       <li class="upper-links"><a class="links" href="AdminHome.php">Contact Us</a></li>
                       <li class="upper-links"><a class="links" href="addproduct.php">Add Product</a></li>
