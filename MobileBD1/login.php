@@ -30,7 +30,7 @@ if(!empty($_POST['username']) && !empty($_POST['password'])) {
 
       else if($username == $dbusername && $password == $dbpassword && $dbUserType=='Admin')  
       {
-        header("location: AdminHome.php");  
+        header("location: AdminAllProduct.php");  
       }
       } else {
         echo "Invalid username or password!";  
