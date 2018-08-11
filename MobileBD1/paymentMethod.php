@@ -1,5 +1,5 @@
 
-<?php 
+<?php require 'sessionCheck.php';
       require 'header.php';
      ?>
 
@@ -10,22 +10,40 @@
 <?php
   //$brand= "";
   
-  $db=mysqli_connect('localhost','root','','mobilebd');
+      $db=mysqli_connect('localhost','root','','mobilebd');
   
+      $username=$_SESSION['username'];
+      $sql2="SELECT * FROM customer Where Username='$username'";
+      $result2= mysqli_query($db,$sql2);
+      $row = $result2->fetch_assoc();
+
+      //var_dump($row);
+      $phone="";
+      $address="";
+      $userid="";
 
 
   if($_SERVER['REQUEST_METHOD'] == "POST")
   {
   
-   
-      $sql1 = "UPDATE order1 SET Payment='Paid' WHERE Order_id=".$_GET['order_id'];
+      $phone= $_REQUEST['phone'];
+      $address= $_REQUEST['address'];
+      $userid=$row['Customer_id'];
 
+     // $sql4="INSERT INTO order1 (Customer_id,Customer_Name,Phone_no,Address)
+         // VALUES ('$userid','$username','$phone','$address')";
+     // $OrderCustomerInfo = mysqli_query($db,$sql4);
+
+      $sql1 = "UPDATE order1 SET Payment='Paid',Customer_id='$userid',Customer_Name='$username', 
+      Phone_no='$phone',Address='$address' WHERE Order_id=".$_GET['order_id'];
       $result1 = mysqli_query($db,$sql1);
 
       $updateStock= "UPDATE product1 SET Stock =".$_GET['newStock']." WHERE Product_id =".$_GET['Product_id'];
-        $resultStock = mysqli_query($db,$updateStock);
+      $resultStock = mysqli_query($db,$updateStock);
 
       
+
+            
       if($result1)
       {
         echo "<script>alert('Product ordered successfully');</script>";
@@ -36,8 +54,9 @@
   
    }
 
-?>
 
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -57,18 +76,34 @@
 
 <div class="container">
   <div id="Checkout" class="inline">
-      <h1>Pay Invoice</h1>
+      
+      <form method="POST"  class="form pay" id="formpay" enctype="multipart/form-data">
+      <h1 align="center">Customer Details</h1>
+      <div class="Name customer form-group">
+              <label for="Customer Name" >Customer Name<h3><?=$row['Username']?></h3></label>
+             
+          </div>
+          <div class="form-group">
+              <label or="Phone">Phone No</label>
+              <input id="Phone" class="form-control" name="phone" type="text" value="<?php echo $row['Phone_no']; ?>" maxlength="15"></input>
+          </div>
+          <div class="form-group">
+              <label or="Address">Address</label>
+              <input id="Address" class="form-control" name="address" type="text" value="<?php echo $row['Address']; ?>" maxlength="50"></input>
+          </div>
+
+
+      <h1 align="center">Pay Invoice</h1>
       <div class="card-row">
           <span class="visa"></span>
           <span class="mastercard"></span>
           <span class="amex"></span>
           <span class="discover"></span>
       </div>
-      <form method="POST"  class="form pay" id="formpay" enctype="multipart/form-data">
           <div class="form-group">
               <label for="PaymentAmount">Payment amount</label>
               <div class="amount-placeholder">
-                  <span>$</span>
+                  <span>TK</span>
                   <span><?=$_GET['Price']*$_GET['quantity']?></span>
               </div>
           </div>

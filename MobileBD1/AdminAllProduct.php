@@ -1,14 +1,7 @@
-
-
-		<?php
-        SESSION_START();
-        if(isset($_SESSION['username']))
-        {
-
-
-            require 'adminheader.php';
-
-        echo '<div class="container">
+<?php
+    require 'adminheader.php';
+?>
+        <div class="container">
         <div><h1 align="center">All Product</h1></div>
         <table class="table table-striped table-bordered table-condensed">
             <tr>
@@ -19,10 +12,10 @@
                 <th>Price</th>
                 <th>Stock</th>
                 <th>Details</th>
-            </tr>';
+            </tr>
 
 
-
+<?php 
             require 'config.php';
 
             $statement="select * from product1 order by Product_id desc";
@@ -49,17 +42,10 @@
             {
                 echo "Nothing found in db";
             }
-            mysqli_close($conn);
-        }
-
-        else
-        {
-            header("location: login.php"); 
-        }
-            
+            mysqli_close($conn);   
         ?>
 		</table>
-        }
+        
 </div>
 </body>
 </html>

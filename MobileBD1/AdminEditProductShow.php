@@ -71,44 +71,44 @@
 			<form method="Post" onsubmit = "validateForm()" class="form login" id="form" action="AdminEditProduct.php" enctype="multipart/form-data">
             <?php if (mysqli_num_rows($result) > 0)
             {
-                while($row = mysqli_fetch_assoc($result))
-                {
-                    ?>
-        <input type="hidden" name="Product_id" value=<?=$id?>>
-			<div class="form__field">
-			  	<label for="addproduct__Brand">Brand</label>
-			  	<input id="addproduct__Brand" type="text" name="Brand" class="form__input" value="<?php echo $row['Brand']; ?>" placeholder="a" style="border: 1px solid transparent">
+                        while($row = mysqli_fetch_assoc($result))
+                        {
+                            ?>
+                <input type="hidden" name="Product_id" value=<?=$id?>>
+        			<div class="form__field">
+        			  	<label for="addproduct__Brand">Brand</label>
+        			  	<input id="addproduct__Brand" type="text" name="Brand" class="form__input" value="<?php echo $row['Brand']; ?>" placeholder="a" style="border: 1px solid transparent">
 
 
-			  </div>
+        			  </div>
 
-			  <div class="form__field">
-			    <label for="addproduct__ProductName">PrName</label>
-			    <input id="addproduct__ProductName" type="text" name="ProductName" class="form__input" value="<?php echo $row['Product_Name']; ?>" placeholder="a" style="border: 1px solid transparent">
-			  </div>
-
-
-
-			  <div class="form__field">
-			    <label for="addproduct__Price">Price</label>
-			    <input id="addproduct__Price" type="text" name="Price" class="form__input" value="<?php echo $row['Price']; ?>"style="border: 1px solid transparent">
-			  </div>
-
-			  
-
-			  <div class="form__field">
-			    <label for="addproduct__Stock">Stock</label>
-			    <input id="addproduct__Stock" type="text" name="Stock" class="form__input" value="<?php echo $row['Stock']; ?>" style="border: 1px solid transparent">
-			  </div>
+        			  <div class="form__field">
+        			    <label for="addproduct__ProductName">PrName</label>
+        			    <input id="addproduct__ProductName" type="text" name="ProductName" class="form__input" value="<?php echo $row['Product_Name']; ?>" placeholder="a" style="border: 1px solid transparent">
+        			  </div>
 
 
-			  <div class="form__field">
-			    <label for="addproduct__Details">Details</label>
-			    <input id="addproduct__Details" type="text" name="Details" class="form__input" value="<?php echo $row['Details']; ?>" style="border: 1px solid transparent">
-			  </div>
 
-              <?php
-                }
+        			  <div class="form__field">
+        			    <label for="addproduct__Price">Price</label>
+        			    <input id="addproduct__Price" type="text" name="Price" class="form__input" value="<?php echo $row['Price']; ?>"style="border: 1px solid transparent">
+        			  </div>
+
+        			  
+
+        			  <div class="form__field">
+        			    <label for="addproduct__Stock">Stock</label>
+        			    <input id="addproduct__Stock" type="text" name="Stock" class="form__input" value="<?php echo $row['Stock']; ?>" style="border: 1px solid transparent">
+        			  </div>
+
+
+        			  <div class="form__field">
+        			    <label for="addproduct__Details">Details</label>
+        			    <input id="addproduct__Details" type="text" name="Details" class="form__input" value="<?php echo $row['Details']; ?>" style="border: 1px solid transparent">
+        			  </div>
+
+                      <?php
+                        }
             }
         ?>
 			  <div class="form__field">

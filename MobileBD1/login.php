@@ -1,7 +1,8 @@
 <?php
 session_start();
 
-if(isset($_POST["signin"])){  
+if(isset($_POST["signin"]))
+{  
   
 if(!empty($_POST['username']) && !empty($_POST['password'])) {  
     $username=$_POST['username'];
@@ -44,14 +45,6 @@ if(!empty($_POST['username']) && !empty($_POST['password'])) {
 
 
 
-<!DOCTYPE html>
-<html>
-<head>
-  <title></title>
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="css/style.css">
-  <script type="text/javascript" src="scripts/jQuery-3.3.1.js"></script>
-
 
 
   <script type="text/javascript">
@@ -83,10 +76,6 @@ if(!empty($_POST['username']) && !empty($_POST['password'])) {
           }
       }
     </script>
-</head>
-
-
-<body  class="">
 
 <?php
   require 'header.php';
