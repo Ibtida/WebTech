@@ -12,12 +12,16 @@
                 <th>Color</th>
                 <th>Storage</th>
                 <th>Quantity</th>
+                <th>Customer_id</th>
+                <th>Customer_Name</th>
+                <th>Address</th>
+                <th>Phone_no</th>
                 <th>dateTime</th>
         		</tr>
                 
                     <?php require 'config.php';
 
-                    $statement="select * from order1 where Payment = 'Paid' order by Order_id asc";
+                    $statement="select * from order1 where Payment = 'Paid' order by Order_id desc";
                     $result = $conn->query($statement);
 
                     if ($result->num_rows > 0)
@@ -32,6 +36,10 @@
         					echo "<td>".$row['Color']."</td>";
         					echo "<td>".$row['Storage']."</td>";
         					echo "<td>".$row['Quantity']."</td>";
+                            echo "<td>".$row['Customer_id']."</td>";
+                            echo "<td>".$row['Customer_Name']."</td>";
+                            echo "<td>".$row['Address']."</td>";
+                            echo "<td>".$row['Phone_no']."</td>";
         					echo "<td>".$row['dateTime']."</td>";
         					echo "<td><a href=\"deleteOnUpdate.php?id=$row[Order_id]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a> | <a href=\"edit.php?id=$row[Order_id]\">Edit</a> | <a href=\"singleview.php?id=$row[Order_id]\">View</a></td>";
         					echo "</tr>";
