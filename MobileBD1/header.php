@@ -28,7 +28,7 @@
                               </svg>
                           </a>
                       </li>
-                      <li class="upper-links dropdown"><a class="links" href="http://clashhacks.in/">All Brand</a>
+                      <li class="upper-links dropdown"><a class="links" href="AllProductView.php">All Brand</a>
                           <ul class="dropdown-menu">
                               <li class="profile-li"><a class="profile-links" href="header.php">APPLE</a></li>
                               <li class="profile-li"><a class="profile-links" href="header.php">ONEPLUS</a></li>

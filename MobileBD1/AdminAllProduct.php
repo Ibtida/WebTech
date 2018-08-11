@@ -44,7 +44,7 @@
                 while($row = mysqli_fetch_assoc($result))
                 {
                     echo "<tr>"; 
-					echo "<td>".$row['Image']."</td>";
+					echo "<td><img height='60px' width='60px' src='".$row['Image']."'></td>";
 					echo "<td>".$row['Product_id']."</td>";
 					echo "<td>".$row['Brand']."</td>";
 					echo "<td>".$row['Product_Name']."</td>";

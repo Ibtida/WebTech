@@ -68,12 +68,13 @@
 	<div class="row">
 		<div class="col-md-4"></div>
 		<div class="col-md-4">
-			<form method="Post" onsubmit = "validateForm()" class="form login" id="form" action="AdminEditProduct.php?id=<?php echo $id; ?>" enctype="multipart/form-data">
+			<form method="Post" onsubmit = "validateForm()" class="form login" id="form" action="AdminEditProduct.php" enctype="multipart/form-data">
             <?php if (mysqli_num_rows($result) > 0)
             {
                 while($row = mysqli_fetch_assoc($result))
                 {
                     ?>
+        <input type="hidden" name="Product_id" value=<?=$id?>>
 			<div class="form__field">
 			  	<label for="addproduct__Brand">Brand</label>
 			  	<input id="addproduct__Brand" type="text" name="Brand" class="form__input" value="<?php echo $row['Brand']; ?>" placeholder="a" style="border: 1px solid transparent">
@@ -106,12 +107,6 @@
 			    <input id="addproduct__Details" type="text" name="Details" class="form__input" value="<?php echo $row['Details']; ?>" style="border: 1px solid transparent">
 			  </div>
 
-			  
-
-			  <div class="form__field">
-			    <label for="addproduct__Image">Image</label>
-			    <input id="addproduct__Image" type="file" name="imagefile" class="form__input" value="<?php echo $row['Image']; ?>" style="border: 1px solid transparent">
-			  </div>
               <?php
                 }
             }

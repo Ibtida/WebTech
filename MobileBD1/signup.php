@@ -12,40 +12,103 @@
 <?php 
   		require 'header.php';
   	 ?>
+
+     <script type="text/javascript">
+    function validateForm() {
+        var username = document.getElementById("signup__username").value;
+        var email = document.getElementById("signup__email").value;
+        var mobile = document.getElementById("signup__mobile").value;
+        var address = document.getElementById("signup__Address").value;
+        var password = document.getElementById("signup__password").value;
+        var cpassword = document.getElementById("signup__Cpassword").value;
+        var status=true;
+        
+        if (username == "") {
+              //alert("All Field must be filled out");
+            document.getElementById("signup__username").style.borderColor = "red";
+            status= false;
+        }
+        if (email == "") {
+             // alert("All Field must be filled out");
+            document.getElementById("signup__email").style.borderColor="red";
+            status= false;
+             }
+        if (mobile == "") {
+             // alert("All Field must be filled out");
+            document.getElementById("signup__mobile").style.borderColor="red";
+            status= false;
+             }
+        if (address == "") {
+             // alert("All Field must be filled out");
+            document.getElementById("signup__Address").style.borderColor="red";
+            status= false;
+             }
+        if (password == "") {
+             // alert("All Field must be filled out");
+            document.getElementById("signup__password").style.borderColor="red";
+            status= false;
+             }
+        if (cpassword == "") {
+             // alert("All Field must be filled out");
+            document.getElementById("signup__Cpassword").style.borderColor="red";
+            status= false;
+             }
+        
+        
+        if (password ===cpassword) {
+              
+          if (!status) {
+            window.alert("Please Fix the Error");
+            return false;
+          }
+          if(status)
+          {
+             document.getElementById('form').submit();
+             return true;
+          }
+       }
+      else
+      {
+        alert("password not matched");
+            document.getElementById("signup__password").style.borderColor="red";
+            return false;
+      }
+    }
+  </script>
 <div class="grid">
 <div class="text-center pad10"><h1>SignUp</h1></div>
 
-  <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" class="form login">
+  <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" onsubmit = "return validateForm()" method="POST" class="form login">
 
     <div class="form__field">
       <label for="signup__username"><span class="glyphicon glyphicon-user" aria-hidden="true"></span><span class="hidden">Username</span></label>
-      <input id="signup__username" type="text" name="username" class="form__input" placeholder="Username" required>
+      <input id="signup__username" type="text" name="username" class="form__input" placeholder="Username" style="border: 1px solid transparent">
     </div>
 
     <div class="form__field">
       <label for="signup__email"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span><span class="hidden">Email</span></label>
-      <input id="signup__email" type="text" name="email" class="form__input" placeholder="Email" required>
+      <input id="signup__email" type="text" name="email" class="form__input" placeholder="Email" style="border: 1px solid transparent">
     </div>
 
     <div class="form__field">
       <label for="signup__mobile"><span class="glyphicon glyphicon-phone" aria-hidden="true"></span><span class="hidden">MobileNo</span></label>
-      <input id="signup__mobile" type="text" name="mobile" class="form__input" placeholder="Mobile" required>
+      <input id="signup__mobile" type="text" name="mobile" class="form__input" placeholder="Mobile" style="border: 1px solid transparent">
     </div>
 
 
     <div class="form__field">
       <label for="signup__address"><span class="glyphicon glyphicon-home" aria-hidden="true"></span><span class="hidden">Address</span></label>
-      <input id="signup__Address" type="text" name="address" class="form__input" placeholder="Address" required>
+      <input id="signup__Address" type="text" name="address" class="form__input" placeholder="Address" style="border: 1px solid transparent">
     </div>
 
     <div class="form__field">
       <label for="signup__password"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span><span class="hidden">Password</span></label>
-      <input id="signup__password" type="password" name="password" class="form__input" placeholder="Password" required>
+      <input id="signup__password" type="password" name="password" class="form__input" placeholder="Password" style="border: 1px solid transparent">
     </div>
 
     <div class="form__field">
       <label for="signup__Cpassword"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span><span class="hidden">CPassword</span></label>
-      <input id="signup__Cpassword" type="password" name="Cpassword" class="form__input" placeholder="Confirm Password" required>
+      <input id="signup__Cpassword" type="password" name="Cpassword" class="form__input" placeholder="Confirm Password" style="border: 1px solid transparent">
     </div>
 
     <div class="form__field">

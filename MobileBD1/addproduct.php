@@ -108,11 +108,13 @@
              }
         
         if (!status) {
-          window.alert("Please Fix the Error")
+          window.alert("Please Fix the Error");
+          return status;
         }
         if(status)
         {
            document.getElementById('form').submit();
+           return status;
         }
     }
   </script>
@@ -122,7 +124,7 @@
 	<div class="row">
 		<div class="col-md-4"></div>
 		<div class="col-md-4">
-			<form method="Post" onsubmit = "validateForm()" class="form login" id="form" enctype="multipart/form-data">
+			<form method="Post" onsubmit = "return validateForm()" class="form login" id="form" enctype="multipart/form-data">
 
 			<div class="form__field">
 			  	<label for="signup__Brand"><span class="glyphicon glyphicon-phone"></span><span class="hidden">Brand</span></label>
