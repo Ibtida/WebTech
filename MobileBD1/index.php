@@ -102,7 +102,7 @@ if ($result->num_rows > 0)
                         <div class="item col-xs-4 col-lg-4">
                             <div class="thumbnail card">
                                 <div class="img-event" style="border:3px solid #6f6868">
-                                    <img class="group list-group-image img-fluid" src=<?=$row['Image']?> alt="" />
+                                    <img class="group aaa list-group-image img-fluid" src=<?=$row['Image']?> alt="" />
                                 </div>
                                 <div class="caption card-body">
                                     <h4 class="group card-title inner list-group-item-heading">

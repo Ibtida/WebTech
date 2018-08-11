@@ -1,9 +1,12 @@
 <?php
+session_start();
 
 if(isset($_POST["signin"])){  
   
 if(!empty($_POST['username']) && !empty($_POST['password'])) {  
-    $username=$_POST['username'];  
+    $username=$_POST['username'];
+
+    $_SESSION['username']=$username;  
     $password=md5($_POST['password']);  
   
     $con=mysqli_connect('localhost','root','','mobilebd'); 

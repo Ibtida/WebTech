@@ -22,7 +22,7 @@
                       <li class="upper-links"><a class="links" href="AdminHome.php">Contact Us</a></li>
                       <li class="upper-links"><a class="links" href="addproduct.php">Add Product</a></li>
                       <li class="upper-links"><a class="links" href="AdminShowAllUser.php">All User</a></li>
-                      <li class="upper-links"><a class="links" href="index.php">Logout</a></li>
+                      <li class="upper-links"><a class="links" href="logout.php">Logout</a></li>
                       
                       <li class="upper-links">
                           <a class="links" href="http://clashhacks.in/">
