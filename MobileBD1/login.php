@@ -25,7 +25,7 @@ if(!empty($_POST['username']) && !empty($_POST['password'])) {
       if($username == $dbusername && $password == $dbpassword && $dbUserType=='Customer')  
       {
         echo "string1".$dbusername;
-        header("location: index.php");  
+        header("location: AllProductView.php");  
       }  
 
       else if($username == $dbusername && $password == $dbpassword && $dbUserType=='Admin')  

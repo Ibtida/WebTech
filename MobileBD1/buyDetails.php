@@ -8,16 +8,14 @@
 	$row=$result->fetch_assoc();
 
 	//var_dump($row);
- ?>
 
-
- <?php
 	$brand= "";
 	$ProductName= "";
 	$Price= "";
 	$color="";
 	$storage="";
 	$quantity="";
+	$limitErr = "";
 
 	//$usernameErr = $emailErr = $password1Err = $password2Err = $dateErr= $matchErr = "";
 	$db=mysqli_connect('localhost','root','','mobilebd');
@@ -35,44 +33,43 @@
 		$quantity= $_REQUEST['quantity'];
 		$stock=$row['Stock'];
 		$Price1=$Price*$quantity;
+		$newStock=$stock-$quantity;
 
-		//echo "$color--$storage";
-		/*if($quantity >= $stock)
+		if($row['Stock'] < $quantity || $quantity < 0)
 		{
-			echo "<script>alert('quantity is much than stock');</script>";
-			header("location: index.php");
-		}*/
-
-		if(!empty($color) && !empty($storage) && !empty($quantity))
+			$limitErr = $quantity . " is exceeds the limit or invalid quantity!";
+		}else
 		{
-			//$password= $Cpassword;
-			//$password= md5($password);d
-
-			// INSERT INTO `product1`(`Product_id`, `Brand`, `Product_Name`, `Price`, `Stock`, `Details`) VALUES ([value-1],[value-2],[value-3],[value-4],[value-5],[value-6])
-			$sql1 = "INSERT INTO order1 (Brand,Product_Name,Price,Color,Storage,Quantity,Payment)
-					VALUES ('$brand','$ProductName','$Price1','$color','$storage','$quantity','unpaid')";
-
-			$result1 = mysqli_query($db,$sql1);
-			
-			if($result1)
+			if(!empty($color) && !empty($storage) && !empty($quantity))
 			{
-				$sql2="SELECT order_id from order1 ORDER by order_id desc limit 1";
-			    $result2 = $conn->query($sql2); 
-				$row2=$result2->fetch_assoc();
-				$order_id=$row2['order_id'];
+				//$password= $Cpassword;
+				//$password= md5($password);d
 
-				echo "<script>alert('Product ordered successfully');</script>";
-				header("location: paymentMethod.php?Product_id=$Product_id&&Price=$Price&&quantity=$quantity&&order_id=$order_id");	
-			}
-			else{
-				$failedErr = "Error: " . $db->error;
-			}
+				// INSERT INTO `product1`(`Product_id`, `Brand`, `Product_Name`, `Price`, `Stock`, `Details`) VALUES ([value-1],[value-2],[value-3],[value-4],[value-5],[value-6])
+				$sql1 = "INSERT INTO order1 (Brand,Product_Name,Price,Color,Storage,Quantity,Payment)
+						VALUES ('$brand','$ProductName','$Price1','$color','$storage','$quantity','unpaid')";
 
-			
+				$result1 = mysqli_query($db,$sql1);
+
+
+				
+				if($result1)
+				{
+					$sql2="SELECT order_id from order1 ORDER by order_id desc limit 1";
+				    $result2 = $conn->query($sql2); 
+					$row2=$result2->fetch_assoc();
+					$order_id=$row2['order_id'];
+
+					
+
+					echo "<script>alert('Product ordered successfully');</script>";
+					header("location: paymentMethod.php?Product_id=$Product_id&&Price=$Price&&quantity=$quantity&&order_id=$order_id&&newStock=$newStock");	
+				}
+				else{
+					$failedErr = "Error: " . $db->error;
+				}
 		}
-		else
-		{
-			//echo "UnSuccessfull";
+			
 		}
 	}	
 
@@ -87,6 +84,8 @@
 		<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 		<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 		<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+		<!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
+		
 	</head>
 
     <body>
@@ -141,6 +140,7 @@
 		                            <div class="btn-minus"><span class="glyphicon glyphicon-minus"></span></div>
 		                            <input name="quantity" value="1" />
 		                            <div class="btn-plus"><span class="glyphicon glyphicon-plus"></span></div>
+		                            <div class="error"><span><?php echo $limitErr; ?></span></div>
 		                        </div>
 		                    </div>                
 		        
@@ -163,5 +163,4 @@
 </html>
 
 
-
-
+<!-- <script type="text/javascript" src="js/my.js"></script> -->

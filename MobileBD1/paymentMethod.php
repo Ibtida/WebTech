@@ -22,6 +22,9 @@
 
       $result1 = mysqli_query($db,$sql1);
 
+      $updateStock= "UPDATE product1 SET Stock =".$_GET['newStock']." WHERE Product_id =".$_GET['Product_id'];
+        $resultStock = mysqli_query($db,$updateStock);
+
       
       if($result1)
       {

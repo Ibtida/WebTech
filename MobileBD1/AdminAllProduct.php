@@ -51,7 +51,7 @@
 					echo "<td>".$row['Price']."</td>";
 					echo "<td>".$row['Stock']."</td>";
 					echo "<td>".$row['Details']."</td>";
-					echo "<td><a href=\"AdminDeleteProduct.php?Product_id=$row[Product_id]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a> | <a href=\"edit.php?id=$row[Product_id]\">Edit</a></td>";
+					echo "<td><a href=\"AdminDeleteProduct.php?Product_id=$row[Product_id]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a> | <a href=\"AdminEditProductShow.php?Product_id=$row[Product_id]\">Edit</a></td>";
 					echo "</tr>";
                 }
 			
