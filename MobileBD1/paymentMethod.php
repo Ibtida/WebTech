@@ -13,7 +13,7 @@
       $db=mysqli_connect('localhost','root','','mobilebd');
   
       $username=$_SESSION['username'];
-      $sql2="SELECT * FROM customer Where Username='$username'";
+      $sql2="SELECT * FROM User Where Username='$username'";
       $result2= mysqli_query($db,$sql2);
       $row = $result2->fetch_assoc();
 

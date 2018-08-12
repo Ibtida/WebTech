@@ -11,7 +11,7 @@ if(!empty($_POST['username']) && !empty($_POST['password'])) {
     $password=md5($_POST['password']);  
   
     $con=mysqli_connect('localhost','root','','mobilebd'); 
-    $sql="SELECT * FROM customer WHERE Username='".$username."' AND Password='".$password."'"; 
+    $sql="SELECT * FROM User WHERE Username='".$username."' AND Password='".$password."'"; 
     $result = $con->query($sql); 
 
 
@@ -70,11 +70,10 @@ if(!empty($_POST['username']) && !empty($_POST['password'])) {
           }
           if(status)
           {
-            window.alert("success");
+            // window.alert("success");
             // document.getElementById("form").submit();
             return true;
           }
-      }
     </script>
 
 <?php

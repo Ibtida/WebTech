@@ -57,7 +57,7 @@
 		{
 			//$password= $Cpassword;
 			$password= md5($password);
-			$sql = "INSERT INTO customer (Username,Email,Phone_no,Address,Password,User_Type)
+			$sql = "INSERT INTO User (Username,Email,Phone_no,Address,Password,User_Type)
 					VALUES ('$username','$email','$mobile','$address','$password','Customer')";
 			$result = mysqli_query($db,$sql);
 

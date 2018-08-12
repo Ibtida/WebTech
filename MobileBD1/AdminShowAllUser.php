@@ -14,7 +14,7 @@
 <?php                    
     require 'config.php';
 
-    $statement="select * from Customer where User_Type='Customer'";
+    $statement="select * from User where User_Type='Customer'";
     $result = $conn->query($statement);
 
     if ($result->num_rows > 0)
