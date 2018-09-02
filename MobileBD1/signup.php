@@ -75,7 +75,7 @@
       }
     }
   </script>
-<div class="grid">
+<div class="grid puredata">
 <div class="text-center pad10"><h1>SignUp</h1></div>
 
   <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" onsubmit = "return validateForm()" method="POST" class="form login">

@@ -1,6 +1,18 @@
 <?php
 // session_start();
 
+
+
+// if(time() - $_SESSION['timestamp'] > ) { //subtract new timestamp from the old one
+//     echo"<script>alert('15 Minutes over!');</script>";
+//     header("Location: logout.php"); //redirect to index.php
+//     exit;
+// } else {
+//     $_SESSION['timestamp'] = time(); //set new timestamp
+// }
+
+
+
 if(isset($_POST["signin"]))
 {  
   
@@ -20,22 +32,45 @@ if(!empty($_POST['username']) && !empty($_POST['password'])) {
       $dbUserType=$row['User_Type'];
 
       print_r($row);
-      echo "<script>Hello</script>";
 
       if($username == $dbusername && $password == $dbpassword && $dbUserType=='Customer')  
       {
         session_start();
         //echo "string1".$dbusername;
         $_SESSION['username']=$username;
+        // setcookie ("username",$_SESSION['username'],time()+ 30);
+        $_SESSION['loggedAt'] = time();
         $_SESSION['type']='Customer';
+
+        if(!empty($_POST["remember"])) {
+          setcookie ("un",$username,time()+ 60);
+          setcookie ("pw",$_POST['password'],time()+ 60);
+        } else {
+          setcookie("un","");
+          setcookie("pw","");
+        }
+
         header("location: AllProductView.php");
+
       }  
 
       else if($username == $dbusername && $password == $dbpassword && $dbUserType=='Admin')  
       {
         session_start();
         $_SESSION['username']=$username;
+        $_SESSION['loggedAt'] = time();
         $_SESSION['type']='Admin';
+
+        if(!empty($_POST["remember"])) {
+          setcookie ("un",$username,time()+ 30);
+          setcookie ("pw",$_POST['password'],time()+ 30);
+          echo "Cookies Set Successfuly";
+        } else {
+          setcookie("un","");
+          setcookie("pw","");
+          echo "Cookies Not Set";
+        }
+
         header("location: AdminAllProduct.php");  
       }
       } else {
@@ -43,7 +78,6 @@ if(!empty($_POST['username']) && !empty($_POST['password'])) {
       }
 }  
 ?>
-
 
 
 
@@ -82,21 +116,26 @@ if(!empty($_POST['username']) && !empty($_POST['password'])) {
   require 'header.php';
 ?>
 
-<div class="grid">
+<div class="grid puredata">
 <div class="text-center pad10"><h1>Login</h1></div>
 
   <form id="form" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" onsubmit = "return validateForm()" name="form" class="form login">
 
     <div class="form__field">
       <label for="login__username"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#user"></use></svg><span class="hidden">Username</span></label>
-      <input id="loginusername" type="text" name="username" class="form__input" placeholder="Username" style="border: 1px solid transparent">
+      <input id="loginusername" type="text" name="username" class="form__input" placeholder="Username" style="border: 1px solid transparent" value="<?php if(isset($_COOKIE["username"])) { echo $_COOKIE["un"]; } ?>" >
       <p id="username_error"></p>
     </div>
 
     <div class="form__field">
       <label for="login__password"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lock"></use></svg><span class="hidden">Password</span></label>
-      <input id="loginpassword" type="password" name="password" class="form__input" placeholder="Password" style="border: 1px solid transparent">
+      <input id="loginpassword" type="password" name="password" class="form__input" placeholder="Password" style="border: 1px solid transparent" value="<?php if(isset($_COOKIE["password"])) { echo $_COOKIE["pw"]; } ?>">
       <p id="password_error" class="hidden">Please Enter Password.</p>
+    </div>
+
+    <div class="field-field  col-md-offset-3">
+    <input type="checkbox" name="remember" id="remember" <?php if(isset($_COOKIE["username"])) { ?> checked <?php } ?> />
+      <label for="remember-me"  style='background: transparent;'>Remember me</label>
     </div>
 
     <div class="form__field">

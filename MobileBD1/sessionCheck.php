@@ -7,4 +7,15 @@
 	{
 		header('location:login.php');
 	}
+	else
+	{
+		if((time()-$_SESSION['loggedAt'])>10)		
+		{
+			header('location:logout.php');
+		}
+		else
+		{
+			$_SESSION['loggedAt']=time();
+		}
+	}
  ?>

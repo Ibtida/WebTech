@@ -112,7 +112,7 @@
             }
         ?>
 			  <div class="form__field">
-			    <input type="submit" name="Added" value="Add">
+			    <input type="submit" name="Added" value="Edit">
 
 			  </div>
 

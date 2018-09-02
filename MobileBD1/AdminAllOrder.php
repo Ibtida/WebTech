@@ -17,11 +17,13 @@
                 <th>Address</th>
                 <th>Phone_no</th>
                 <th>dateTime</th>
+                <th>delivery status</th>
+                <th></th>
         		</tr>
                 
                     <?php require 'config.php';
 
-                    $statement="select * from order1 where Payment = 'Paid' order by Order_id desc";
+                    $statement="select * from order1 where Payment = 'Paid' order by delivery asc, Order_id desc";
                     $result = $conn->query($statement);
 
                     if ($result->num_rows > 0)
@@ -40,8 +42,14 @@
                             echo "<td>".$row['Customer_Name']."</td>";
                             echo "<td>".$row['Address']."</td>";
                             echo "<td>".$row['Phone_no']."</td>";
-        					echo "<td>".$row['dateTime']."</td>";
-        					echo "<td><a href=\"deleteOnUpdate.php?id=$row[Order_id]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a> | <a href=\"edit.php?id=$row[Order_id]\">Edit</a> | <a href=\"singleview.php?id=$row[Order_id]\">View</a></td>";
+                            echo "<td>".$row['dateTime']."</td>";
+                            echo "<td>".$row['delivery']."</td>";
+                            if($row['delivery']=='no')
+        					 echo "<td><a href=\"DeliveryConfirm.php?Order_id=$row[Order_id]\">Delivery</a></td>";
+                            else
+                                echo "<td>Delivared</td>";
+        					// echo "<td><a href=\"deleteOnUpdate.php?id=$row[Order_id]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a> | <a href=\"edit.php?id=$row[Order_id]\">Edit</a> | <a href=\"singleview.php?id=$row[Order_id]\">View</a></td>";
+
         					echo "</tr>";
                         }
         			

@@ -1,6 +1,7 @@
 
 <?php 
   require 'sessionCheck.php';
+
   require 'header.php';
  ?>
 
@@ -73,7 +74,7 @@
 <body>
 
 
-<div class="container">
+<div class="container puredata">
   <div id="Checkout" class="inline">
       
       <form method="POST"  class="form pay" id="formpay" enctype="multipart/form-data">

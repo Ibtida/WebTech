@@ -14,7 +14,7 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) 
     { ?>
 
-<div class="container">
+<div class="container puredata">
     <div id="products" class="row view-group">
 
             <?php
@@ -66,6 +66,7 @@ if ($result->num_rows > 0)
 
                     $conn->close();
                     ?> 
+        </div>
         </div>
 
 <br />

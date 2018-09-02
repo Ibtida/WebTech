@@ -80,7 +80,7 @@
 			require 'header.php';
 		 ?>
 
-       <form method="POST"  class="form buy" id="formbuy">
+       <form method="POST"  class="form buy puredata" id="formbuy">
         <div class="container">                   
         	<div class="row">
                			<div class="col-xs-4 item-photo">
@@ -125,9 +125,9 @@
 		                    <div class="section" style="padding-bottom:20px;">
 		                        <h6 class="title-attr"><small>QUANTITY</small></h6>                    
 		                        <div>
-		                            <div class="btn-minus"><span class="glyphicon glyphicon-minus"></span></div>
+		                            <!-- <div class="btn-minus"><span class="glyphicon glyphicon-minus"></span></div> -->
 		                            <input name="quantity" value="1" class="form__input" />
-		                            <div class="btn-plus"><span class="glyphicon glyphicon-plus"></span></div>
+		                            <!-- <div class="btn-plus"><span class="glyphicon glyphicon-plus"></span></div> -->
 		                            <div class="error"><span><?php echo $limitErr; ?></span></div>
 		                        </div>
 		                    </div>                
