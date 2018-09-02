@@ -8,7 +8,7 @@
 <?php
 require 'config.php';
 
-$sql = "SELECT * FROM product1 order by Product_id desc";
+$sql = "SELECT * FROM product1 WHERE Brand='".$_REQUEST['brand']."'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) 

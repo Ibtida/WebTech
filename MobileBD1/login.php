@@ -1,21 +1,17 @@
 <?php
-session_start();
+// session_start();
 
 if(isset($_POST["signin"]))
 {  
   
 if(!empty($_POST['username']) && !empty($_POST['password'])) {  
     $username=$_POST['username'];
-
-    $_SESSION['username']=$username;  
+  
     $password=md5($_POST['password']);  
   
     $con=mysqli_connect('localhost','root','','mobilebd'); 
     $sql="SELECT * FROM User WHERE Username='".$username."' AND Password='".$password."'"; 
     $result = $con->query($sql); 
-
-
-      
 
     $row=$result->fetch_assoc();
 
@@ -28,12 +24,18 @@ if(!empty($_POST['username']) && !empty($_POST['password'])) {
 
       if($username == $dbusername && $password == $dbpassword && $dbUserType=='Customer')  
       {
-        echo "string1".$dbusername;
-        header("location: AllProductView.php");  
+        session_start();
+        //echo "string1".$dbusername;
+        $_SESSION['username']=$username;
+        $_SESSION['type']='Customer';
+        header("location: AllProductView.php");
       }  
 
       else if($username == $dbusername && $password == $dbpassword && $dbUserType=='Admin')  
       {
+        session_start();
+        $_SESSION['username']=$username;
+        $_SESSION['type']='Admin';
         header("location: AdminAllProduct.php");  
       }
       } else {

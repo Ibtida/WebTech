@@ -1,11 +1,10 @@
 
-<?php require 'sessionCheck.php';
-      require 'header.php';
-     ?>
+<?php 
+  require 'sessionCheck.php';
+  require 'header.php';
+ ?>
 
-   <?php require 'config.php'; ?>
-
- 
+<?php require 'config.php'; ?>
 
 <?php
   //$brand= "";

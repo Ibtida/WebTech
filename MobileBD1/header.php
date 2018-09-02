@@ -1,3 +1,58 @@
+<script type="text/javascript">
+  $.ajax({
+                    
+                    url: "service/user/service_search.php",
+                    method: "post",
+                    data: $('#search_form').serialize(),
+                    success: function(Result){
+                        if(Result != "")
+                        {
+                            var one = Result.split(",");
+                            
+                            for(var i = 0; i < one.length; i++)
+                            {
+                                console.log(one[i]);
+                                show(one[i]);
+                            }
+                            
+                        }
+                        else
+                        {
+                            no_result();
+                        }
+                    }
+                })
+
+
+
+  function show(Result)
+              {
+                  var path = "temp_server/"+Result;
+                   $.ajax({
+                      url: path,
+                      success: function(data){
+                          $(data).find('a').attr("href", function(i,val){
+                              if(val.match(/\.(jpe?g|png)$/)){
+                                  //document.getElementById("b").innerHTML ="<img width = '200px' height = '200px' src='"+path+"/"+ val +"'>";
+                                  //$('#b').append("<img width = '200px' height = '200px' src='"+path+"/"+ val +"'>    ");
+                                  $('#b').append("<div class='col-4'><img src='"+path+"/"+ val +"'><a href='view/sales/show_details.php?chassis_no="+Result+"'><figcaption class='grid_caption'>SHOW</figcaption></a></div>");
+                                  document.getElementById("recomanded").style.display = "none";
+                                  document.getElementById("r").style.display = "none";
+                              }
+                          })
+                      }
+                  })
+              }
+
+  function no_result()
+  {
+      document.getElementById("b").innerHTML = "";
+      document.getElementById("recomanded").style.display = "block";
+  }
+
+
+</script>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,7 +74,6 @@
                       <li class="upper-links"><a class="links" href="index.php">Home</a></li>
                       <li class="upper-links"><a class="links" href="https://campusbox.org/">About Us</a></li>
                       <li class="upper-links"><a class="links" href="http://clashhacks.in/">Contact Us</a></li>
-                      <li class="upper-links"><a class="links" href="login.php">Login</a></li>
                       
                       <li class="upper-links">
                           <a class="links" href="http://clashhacks.in/">
@@ -30,13 +84,29 @@
                       </li>
                       <li class="upper-links dropdown"><a class="links" href="AllProductView.php">All Brand</a>
                           <ul class="dropdown-menu">
-                              <li class="profile-li"><a class="profile-links" href="header.php">APPLE</a></li>
-                              <li class="profile-li"><a class="profile-links" href="header.php">ONEPLUS</a></li>
-                              <li class="profile-li"><a class="profile-links" href="header.php">SAMSUNG</a></li>
-                              <li class="profile-li"><a class="profile-links" href="header.php">HUAWEI</a></li>
-                              <li class="profile-li"><a class="profile-links" href="header.php">XIAOMI</a></li>
+                              <li class="profile-li"><a class="profile-links" href="Product.php?brand=apple">APPLE</a></li>
+                              <li class="profile-li"><a class="profile-links" href="Product.php?brand=oneplus">ONEPLUS</a></li>
+                              <li class="profile-li"><a class="profile-links" href="Product.php?brand=samsung">SAMSUNG</a></li>
+                              <li class="profile-li"><a class="profile-links" href="Product.php?brand=huawei">HUAWEI</a></li>
+                              <li class="profile-li"><a class="profile-links" href="Product.php?brand=Xiaomi">XIAOMI</a></li>
                           </ul>
                       </li>
+                      <?php
+                      if (!isset($_SESSION)) {
+                       session_start();
+                      }
+
+                        if (isset($_SESSION['username']))
+                         { 
+                          echo "<li class='upper-links'><a class='links' href='#'>".$_SESSION['username']."</a></li>";  
+                          echo "<li class='upper-links'><a class='links' href='logout.php'>Logout</a></li>";  
+                        }
+                        else
+                        {
+                         echo "<li class='upper-links'><a class='links' href='login.php'>Login</a></li>";   
+                        }
+                      ?>
+                      <!-- <li class="upper-links"><a class="links" href="login.php">Login</a></li> -->
                   </ul>
               </div>
               <div class="row row2">

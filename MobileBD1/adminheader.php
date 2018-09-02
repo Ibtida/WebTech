@@ -1,4 +1,5 @@
 <?php 
+require 'UserTypeSessionCheck.php';
 require 'sessionCheck.php';
  ?>
 
@@ -26,7 +27,17 @@ require 'sessionCheck.php';
                               <li class="upper-links"><a class="links" href="AdminHome.php">Contact Us</a></li>
                               <li class="upper-links"><a class="links" href="addproduct.php">Add Product</a></li>
                               <li class="upper-links"><a class="links" href="AdminShowAllUser.php">All User</a></li>
-                              <li class="upper-links"><a class="links" href="logout.php">Logout</a></li>
+                              <?php
+                                if (isset($_SESSION['username']))
+                                 { 
+                                  echo "<li class='upper-links'><a class='links' href='#'>".$_SESSION['username']."</a></li>";  
+                                  echo "<li class='upper-links'><a class='links' href='logout.php'>Logout</a></li>";  
+                                }
+                                else
+                                {
+                                 echo "<li class='upper-links'><a class='links' href='login.php'>Login</a></li>";   
+                                }
+                              ?>
                               
                               <li class="upper-links">
                                   <a class="links" href="http://clashhacks.in/">

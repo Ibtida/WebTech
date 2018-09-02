@@ -8,42 +8,42 @@
    
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-  </ol>
+    <ol class="carousel-indicators">
+      <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    </ol>
 
   <!-- Wrapper for slides -->
-  <div class="carousel-inner" role="listbox">
-    <div class="item active">
-      <img class="sliderimage" src="images/image1.jpg" alt="...">
-      <div class="carousel-caption">
-        ...
-      </div>
-    </div>
-    <div class="item">
-      <img class="sliderimage" src="images/image2.jpg" alt="...">
-      <div class="carousel-caption">
-        ...
-      </div>
-    </div>
+    <div class="carousel-inner" role="listbox">
+          <div class="item active">
+              <img class="sliderimage" src="images/image1.jpg" alt="...">
+              <div class="carousel-caption">
+              ...
+              </div>
+          </div>
+          <div class="item">
+              <img class="sliderimage" src="images/image2.jpg" alt="...">
+              <div class="carousel-caption">
+              ...
+              </div>
+          </div>
 
-    <div class="item">
-      <img class="sliderimage" src="images/imagegif.gif" alt="...">
-      <div class="carousel-caption">
-        ...
-      </div>
-    </div>
+          <div class="item">
+              <img class="sliderimage" src="images/imagegif.gif" alt="...">
+              <div class="carousel-caption">
+              ...
+              </div>
+          </div>
 
-    <div class="item">
-      <img class="sliderimage" src="images/apple2image.gif" alt="...">
-      <div class="carousel-caption">
-        ...
-      </div>
+          <div class="item">
+              <img class="sliderimage" src="images/apple2image.gif" alt="...">
+              <div class="carousel-caption">
+              ...
+              </div>
+          </div>
+          ...
     </div>
-    ...
-  </div>
 
   <!-- Controls -->
   <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
@@ -145,7 +145,7 @@ if ($result->num_rows > 0)
 
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/my.js"></script>
 
