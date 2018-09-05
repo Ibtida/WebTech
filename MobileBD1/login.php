@@ -81,7 +81,7 @@ if(!empty($_POST['username']) && !empty($_POST['password'])) {
 
 
 
-
+<!--validation-->
 
   <script type="text/javascript">
       function validateForm() {

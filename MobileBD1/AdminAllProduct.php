@@ -49,7 +49,7 @@
 <div class="puredata">
         <div class="container">
         <div><h1 align="center">All Product</h1></div>
-        <table class="table table-striped table-bordered table-condensed">
+        <table style="color: white" class="table table-striped table-bordered table-condensed">
             <tr>
                 <th>Image</th>
                 <th>Product_id</th>

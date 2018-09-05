@@ -9,7 +9,7 @@
 	}
 	else
 	{
-		if((time()-$_SESSION['loggedAt'])>10)		
+		if((time()-$_SESSION['loggedAt'])>60*60)		
 		{
 			header('location:logout.php');
 		}
